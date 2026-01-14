@@ -142,9 +142,38 @@ header {
   gap: 2rem;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .grid-2 {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  /* Mobile Header Fix */
+  .nav-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .nav-links {
+    gap: 15px;
+    font-size: 0.9rem;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap; 
+  }
+
+  .logo {
+    margin-bottom: 0.25rem;
+  }
+
+  /* Hero Mobile Tweaks */
+  .hero {
+    padding: 3rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
   }
 }
 
