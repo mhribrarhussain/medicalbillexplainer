@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Bill Explainer - Plain English Hospital Bill Help</title>
+    <meta name="description" content="Confused by your medical bill? We explain CPT codes, hospital charges, and insurance EOBs in plain English. Free educational tool for US patients.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://medicalbillexplainer.netlify.app/">
+    <script defer src="script.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Medical Bill Explainer",
+      "url": "https://medicalbillexplainer.netlify.app/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://medicalbillexplainer.netlify.app/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Medical Bill Explainer</a>
+            <nav class="nav-links">
+                <a href="medical-bill-explainer.html">Explainer Tool</a>
+                <a href="#search">Search Codes</a>
+                <a href="insurance-eob-explained.html">EOB Guide</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Confused by a Medical Bill?</h1>
+        <p>We translate hospital codes and insurance jargon into plain English.</p>
+        <div class="cta-buttons">
+            <a href="medical-bill-explainer.html" class="btn btn-primary">Explain My Medical Bill</a>
+            <a href="insurance-eob-explained.html" class="btn btn-secondary">Understand My Insurance</a>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <section id="search" class="section" style="text-align: center; max-width: 600px; margin: 0 auto 4rem auto;">
+            <h2>Search a CPT Code</h2>
+            <p>Enter a 5-digit code from your bill (e.g., 99214, 80053)</p>
+            <div style="margin-top: 1rem; display: flex; gap: 10px; justify-content: center;">
+                <input type="text" id="cptSearchInput" placeholder="Enter Code (e.g. 99213)" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 70%;">
+                <button onclick="window.location.href='cpt/' + document.getElementById('cptSearchInput').value + '.html'" class="btn btn-primary">Search</button>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Common Billing Questions</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Office Visits</h3>
+                    <p>Why did your doctor charge for a Level 4 visit?</p>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><a href="cpt/99213.html">CPT 99213 (Standard Visit)</a></li>
+                        <li><a href="cpt/99214.html">CPT 99214 (Complex Visit)</a></li>
+                        <li><a href="cpt/99203.html">CPT 99203 (New Patient)</a></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Lab Tests</h3>
+                    <p>What are all these separate charges for blood work?</p>
+                     <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><a href="cpt/80053.html">Comprehensive Metabolic Panel</a></li>
+                        <li><a href="cpt/85025.html">CBC Blood Test</a></li>
+                        <li><a href="cpt/36415.html">Venipuncture Fee (Blood Draw)</a></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Emergency Room</h3>
+                    <p>Understanding ER levels and facility fees.</p>
+                     <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><a href="cpt/99283.html">ER Level 3 (Moderate)</a></li>
+                        <li><a href="cpt/99284.html">ER Level 4 (Severe)</a></li>
+                        <li><a href="cpt/99285.html">ER Level 5 (Life Threatening)</a></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Imaging</h3>
+                    <p>X-Rays, MRIs, and CT Scans explained.</p>
+                     <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><a href="cpt/71046.html">Chest X-Ray (2 Views)</a></li>
+                        <li><a href="cpt/72148.html">MRI Lumbar Spine</a></li>
+                        <li><a href="cpt/77067.html">Mammogram Screening</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: #e6f0ff; padding: 2rem; border-radius: 8px; text-align: center;">
+            <h2>Think You Were Overcharged?</h2>
+            <p style="margin-bottom: 1.5rem;">Learn how to spot errors and ask the right questions.</p>
+            <a href="bill-dispute-guide.html" class="btn btn-primary">Read the Dispute Guide</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Medical Bill Explainer. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+            </div>
+            <div class="disclaimer">
+                <p>Disclaimer: This website provides educational information only and does not provide medical, legal, or insurance advice.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

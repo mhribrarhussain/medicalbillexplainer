@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Medical Bill Explainer Tool - Analyze Your Hospital Bill</title>
+    <meta name="description" content="Paste your medical bill or EOB text to instantly identify CPT codes, understand charges, and find confusing terms. Free, secure, and private tool.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://medicalbillexplainer.netlify.app/medical-bill-explainer.html">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Medical Bill Explainer</a>
+            <nav class="nav-links">
+                <a href="medical-bill-explainer.html" class="active">Explainer Tool</a>
+                <a href="index.html#search">Search Codes</a>
+                <a href="insurance-eob-explained.html">EOB Guide</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section" style="text-align: center;">
+            <h1>Medical Bill & EOB Explainer</h1>
+            <p style="max-width: 800px; margin: 1rem auto;">Paste the text from your digital medical bill, CSV, or Explanation of Benefits (EOB) below. We will scan it for CPT codes and common insurance terms to help you understand what you are being charged for.</p>
+            
+            <div style="background-color: #e8f5e9; padding: 1rem; border-radius: 4px; display: inline-block; margin-bottom: 2rem; border: 1px solid #c8e6c9;">
+                <strong>🔒 HIPAA Safe & Private:</strong> Processing happens right here in your browser. <br>Your data is <strong>never</strong> sent to any server.
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="card">
+                <label for="billInput" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Paste Bill Text:</label>
+                <textarea id="billInput" class="bill-input" placeholder="Example:
+Date of Service: 01/15/2024
+Code: 99213 - Office Visit
+Code: 80053 - Comprehensive Metabolic Panel
+Allowed Amount: $120.00
+Ded Copay: $25.00"></textarea>
+                
+                <button id="analyzeBtn" class="btn btn-primary" style="margin-top: 1rem; width: 100%; font-size: 1.1rem;">Analyze My Bill</button>
+            </div>
+
+            <div id="resultsArea" class="results-area">
+                <p style="color: #666; text-align: center; margin-top: 2rem;">Results will appear here...</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>How This Tool Works</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>1. Scan for Codes</h3>
+                    <p>We look for 5-digit CPT codes (like 99214 or 71045) that doctors use to bill insurance. We then link you to a plain English explanation for each code found.</p>
+                </div>
+                <div>
+                    <h3>2. Detect Insurance Terms</h3>
+                    <p>We identify confusing words like "Coinsurance," "Deductible," and "Allowed Amount" and provide simple definitions so you know who pays what.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Medical Bill Explainer. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+            </div>
+             <div class="disclaimer">
+                <p>Disclaimer: This website provides educational information only and does not provide medical, legal, or insurance advice.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
