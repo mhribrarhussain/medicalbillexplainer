@@ -80,3 +80,19 @@ document.addEventListener('DOMContentLoaded', () => {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
 });
+
+// GA4 Event Tracking
+document.addEventListener("DOMContentLoaded", function () {
+  const explainBtn = document.getElementById("explain-bill-btn");
+
+  if (explainBtn) {
+    explainBtn.addEventListener("click", function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'explain_bill_click', {
+            event_category: 'engagement',
+            event_label: 'Explain Medical Bill CTA'
+        });
+      }
+    });
+  }
+});
