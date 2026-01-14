@@ -32,23 +32,46 @@ cptCodes.forEach(cpt => {
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@graph": [
       {
-        "@type": "Question",
-        "name": `What is CPT Code ${cpt.code}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `CPT Code ${cpt.code} represents ${cpt.title}. ${cpt.description}`
-        }
+        "@type": "Article",
+        "headline": `What Does CPT Code ${cpt.code} Mean?`,
+        "description": `Understand CPT Code ${cpt.code} (${cpt.title}). Plain English explanation and pricing.`,
+        "author": {
+          "@type": "Organization",
+          "name": "Medical Bill Explainer"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Medical Bill Explainer",
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${domain}/logo.png` 
+          }
+        },
+        "datePublished": "2024-01-14",
+        "dateModified": new Date().toISOString().split('T')[0]
       },
       {
-        "@type": "Question",
-        "name": `How much does CPT Code ${cpt.code} cost?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `The typical price range for CPT ${cpt.code} is between $${cpt.price_low} and $${cpt.price_high} without insurance. Prices vary by location and facility.`
-        }
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": `What is CPT Code ${cpt.code}?`,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": `CPT Code ${cpt.code} represents ${cpt.title}. ${cpt.description}`
+            }
+          },
+          {
+            "@type": "Question",
+            "name": `How much does CPT Code ${cpt.code} cost?`,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": `The typical price range for CPT ${cpt.code} is between $${cpt.price_low} and $${cpt.price_high} without insurance. Prices vary by location and facility.`
+            }
+          }
+        ]
       }
     ]
   };
