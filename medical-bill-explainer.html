@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR86PQXG37"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PR86PQXG37');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Medical Bill Explainer & Decoder Tool - Scan CPT Codes & Charges</title>
+    <meta name="description" content="Paste your medical bill or insurance EOB text to instantly identify CPT procedure codes, check typical US cash prices, detect duplicate charges, and translate confusing insurance terms. 100% private and browser-based.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://medicalbillexplainer.netlify.app/medical-bill-explainer.html">
+    <script src="cpt_data.js"></script>
+    <script defer src="script.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "Medical Bill Explainer & CPT Code Decoder",
+          "description": "Free, HIPAA-safe in-browser tool to scan medical bills, itemized statements, and Explanation of Benefits (EOB) documents for CPT codes, estimated pricing, and insurance jargon.",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does the Medical Bill Explainer Tool work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Paste your itemized hospital statement or digital Explanation of Benefits (EOB) text into the box. Our browser-based scanner extracts 5-digit CPT procedure codes, compares them against national fair pricing ranges, flags potential duplicate charges, and defines insurance jargon."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is my medical data secure and private?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. 100% of the analysis occurs client-side inside your own web browser using JavaScript. No personal identifiable information (PII), patient names, or financial numbers are ever uploaded or transmitted to any external server or database."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where can I find CPT codes on my medical bill?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "CPT codes are 5-digit numbers (e.g. 99213, 80053, 77067) or alphanumeric codes starting with J. If your bill only shows general categories like 'Lab' or 'Pharmacy', call your hospital billing department and request a detailed 'Itemized Statement with CPT procedure codes'."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Medical Bill Explainer</a>
+            <nav class="nav-links">
+                <a href="codes.html">Browse Codes</a>
+                <a href="medical-bill-explainer.html" class="active">Explainer Tool</a>
+                <a href="insurance-eob-explained.html">EOB Guide</a>
+                <a href="bill-dispute-guide.html">Dispute Guide</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Breadcrumb -->
+        <p style="margin-bottom: 1.5rem; font-size: 0.9rem; color: #64748b;">
+            <a href="index.html">Home</a> &gt; Patient Tools &gt; Medical Bill Explainer
+        </p>
+
+        <!-- Header Section -->
+        <section class="section" style="text-align: center; margin-bottom: 2rem;">
+            <span class="badge" style="background: #e0f2fe; color: #0369a1; margin-bottom: 0.75rem;">Free Patient Utility</span>
+            <h1 style="font-size: 2.75rem; margin-bottom: 1rem;">Medical Bill & EOB Decoder Tool</h1>
+            <p style="max-width: 780px; margin: 0 auto 1.5rem auto; font-size: 1.15rem; color: #475569;">Paste the text from your digital hospital invoice, patient portal, or Explanation of Benefits (EOB). We will instantly identify the CPT procedure codes, check fair benchmark cash prices, and translate confusing billing terms.</p>
+            
+            <div style="background-color: #ecfdf5; padding: 0.85rem 1.25rem; border-radius: 9999px; display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid #a7f3d0; font-size: 0.9rem; color: #065f46;">
+                <span>🔒</span>
+                <span><strong>100% HIPAA Safe & Private:</strong> Analysis runs purely inside your browser. Your data is <strong>never</strong> transmitted to any server.</span>
+            </div>
+        </section>
+
+        <!-- Main Tool Card -->
+        <section class="section">
+            <div class="card" style="padding: 2.25rem; box-shadow: var(--shadow-md);">
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;">
+                    <label for="billInput" style="font-weight: 700; font-size: 1.05rem; color: var(--secondary-color);">Paste Your Medical Bill or EOB Text Below:</label>
+                    
+                    <!-- Pre-fill Sample Buttons -->
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+                        <span style="font-size: 0.825rem; font-weight: 600; color: #64748b;">Or try a sample bill:</span>
+                        <button type="button" class="sample-btn" data-sample="er">🚨 Sample ER Visit</button>
+                        <button type="button" class="sample-btn" data-sample="mammogram">🌸 Sample Mammogram</button>
+                        <button type="button" class="sample-btn" data-sample="physical">🩺 Sample Bloodwork & Checkup</button>
+                    </div>
+                </div>
+
+                <textarea id="billInput" class="bill-input" placeholder="Example bill text to paste:
+Date of Service: 01/15/2025
+Code: 99213 - Office Visit, Established Patient
+Code: 80053 - Comprehensive Metabolic Panel
+Allowed Amount: $145.00
+Deductible Applied: $50.00
+Patient Copay: $25.00"></textarea>
+                
+                <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <button id="analyzeBtn" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.85rem 2rem; width: 100%;">⚡ Analyze My Bill Now</button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsArea" class="results-area" style="box-shadow: var(--shadow-sm);">
+                <div style="text-align: center; padding: 2.5rem 1rem; color: #64748b;">
+                    <p style="font-size: 1.1rem;">Paste your bill above or click one of the sample buttons to see the instant analysis breakdown.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="section">
+            <h2 class="section-title">How the Bill Decoder Protects You</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="font-size: 1.5rem;">🔍</span>
+                        <h3 style="margin: 0; font-size: 1.25rem;">1. CPT & HCPCS Code Recognition</h3>
+                    </div>
+                    <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">Doctors bill insurance using 5-digit CPT procedure codes (e.g. 99214 for a complex visit or 71046 for an X-ray). Our tool detects these codes and matches them with plain English descriptions and fair cash benchmarks so you know what you are being billed for.</p>
+                </div>
+
+                <div class="card">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="font-size: 1.5rem;">📑</span>
+                        <h3 style="margin: 0; font-size: 1.25rem;">2. Insurance Jargon Decoded</h3>
+                    </div>
+                    <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">Terms like <em>Allowed Amount</em>, <em>Coinsurance</em>, and <em>Facility Fees</em> are designed to confuse patients. We translate every detected term so you know whether a charge is your legal responsibility or a contractual write-off.</p>
+                </div>
+
+                <div class="card">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="font-size: 1.5rem;">⚠️</span>
+                        <h3 style="margin: 0; font-size: 1.25rem;">3. Duplicate Charge Detection</h3>
+                    </div>
+                    <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">One of the most common hospital billing errors is duplicate billing (e.g. charging twice for the same blood draw or medication). Our scanner checks code frequencies and alerts you if a duplicate appears.</p>
+                </div>
+
+                <div class="card">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="font-size: 1.5rem;">⚖️</span>
+                        <h3 style="margin: 0; font-size: 1.25rem;">4. Balance Billing & EOB Comparison</h3>
+                    </div>
+                    <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">Never pay a medical bill before comparing it with your insurance Explanation of Benefits. If the provider bills you more than the EOB says you owe, you can use our <a href="insurance-eob-explained.html" style="font-weight: 600; text-decoration: underline;">EOB Discrepancy Calculator</a> to generate an immediate dispute script.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion -->
+        <section class="section faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <details>
+                <summary>What if my bill doesn't have 5-digit CPT codes?</summary>
+                <p>Hospitals frequently send "summary bills" that just say general words like "Lab: $800" or "Pharmacy: $1,200". By law, you have the right to request a detailed, itemized statement. Call the billing office and say: <em>"Please send me an itemized statement with all CPT and HCPCS procedure codes."</em></p>
+            </details>
+
+            <details>
+                <summary>Can I paste a PDF or image into this tool?</summary>
+                <p>If your bill is a PDF, simply open it on your computer or phone, select/highlight the text, and copy-paste it into the box. If you have a paper bill, you can copy the text using your smartphone camera's "Live Text" feature.</p>
+            </details>
+
+            <details>
+                <summary>How does this tool help me lower my medical bill?</summary>
+                <p>Knowledge is your strongest negotiating lever. Once you see the fair cash price range for your codes, you can call the hospital billing department and ask for a prompt-pay cash discount, question charges that exceed national benchmarks, or apply for hospital charity care.</p>
+            </details>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Medical Bill Explainer. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+            </div>
+             <div class="disclaimer">
+                <p>Disclaimer: This website provides educational information only and does not provide medical, legal, or insurance advice. CPT® is a registered trademark of the American Medical Association.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

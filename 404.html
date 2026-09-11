@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR86PQXG37"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PR86PQXG37');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found (404) - Medical Bill Explainer</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Medical Bill Explainer</a>
+            <nav class="nav-links">
+                <a href="codes.html">Browse Codes</a>
+                <a href="medical-bill-explainer.html">Explainer Tool</a>
+                <a href="insurance-eob-explained.html">EOB Guide</a>
+                <a href="bill-dispute-guide.html">Dispute Guide</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="text-align: center; padding: 4rem 1rem;">
+        <div class="card" style="max-width: 650px; margin: 0 auto; padding: 3rem 2rem; box-shadow: var(--shadow-md);">
+            <span class="badge" style="background: #fee2e2; color: #b91c1c; font-size: 0.95rem; margin-bottom: 1rem;">Error 404</span>
+            <h1 style="font-size: 2.25rem; color: var(--secondary-color); margin-bottom: 0.75rem;">Page or Code Not Found</h1>
+            <p style="color: #64748b; font-size: 1.05rem; margin-bottom: 2rem;">The medical billing code or page you are looking for might have moved, or is not currently in our primary directory.</p>
+            
+            <!-- Quick CPT Search Bar -->
+            <div style="display: flex; gap: 8px; justify-content: center; max-width: 480px; margin: 0 auto 2rem auto;">
+                <input type="text" id="errorSearchInput" placeholder="Search Code (e.g. 77067, 99213)..." style="padding: 0.8rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; width: 70%; font-size: 1rem;">
+                <button onclick="searchCodeRedirect()" class="btn btn-primary">Search</button>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+                <a href="codes.html" class="btn btn-primary">Browse All 57 Codes</a>
+                <a href="medical-bill-explainer.html" class="btn btn-secondary">Paste & Analyze Your Bill</a>
+                <a href="index.html" class="btn btn-secondary">Go to Homepage</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Medical Bill Explainer. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+            </div>
+             <div class="disclaimer">
+                <p>Disclaimer: This website provides educational information only and does not provide medical, legal, or insurance advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    function searchCodeRedirect() {
+        const val = document.getElementById('errorSearchInput').value.trim().toUpperCase();
+        if (val) {
+            window.location.href = 'cpt/' + val + '.html';
+        }
+    }
+    document.getElementById('errorSearchInput').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') searchCodeRedirect();
+    });
+    </script>
+
+</body>
+</html>
