@@ -235,6 +235,13 @@ cptCodes.forEach(cpt => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CPT ${cpt.code}: ${cpt.title} - Cost, Meaning & Bill Guide</title>
     <meta name="description" content="CPT Code ${cpt.code} is ${cpt.title}. Learn typical cash costs ($${cpt.price_low}-$${cpt.price_high}), insurance coverage rules, why doctors bill this, and questions to ask.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+    </noscript>
     <link rel="stylesheet" href="../style.css">
     <link rel="canonical" href="${pageUrl}">
     <script type="application/ld+json">
@@ -399,6 +406,13 @@ const codesHtml = `<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complete CPT Code Directory (2026) - Plain English Medical Billing Guide</title>
     <meta name="description" content="Browse our complete medical CPT code directory. Find plain English explanations, cash cost ranges ($), and billing advice for all 57 common hospital and office codes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+    </noscript>
     <link rel="stylesheet" href="style.css">
     <link rel="canonical" href="${domain}/codes.html">
     <script type="application/ld+json">
