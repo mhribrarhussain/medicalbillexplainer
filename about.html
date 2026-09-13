@@ -79,9 +79,11 @@
             "url": "https://eobexplanation.com/",
             "founder": {
               "@type": "Person",
+              "@id": "https://eobexplanation.com/about.html#author",
               "name": "M. Ibrar Hussain",
               "jobTitle": "Founder & Healthcare Billing Researcher",
-              "description": "Researcher and technologist specializing in open health data, medical billing transparency, and consumer patient advocacy."
+              "url": "https://eobexplanation.com/about.html#author",
+              "description": "Researcher and web technologist focused on public health data, medical billing transparency, and consumer education."
             },
             "publishingPrinciples": "https://eobexplanation.com/about.html#editorial-standards"
           }
@@ -102,7 +104,7 @@
               "name": "Is my personal health or billing data stored on your servers?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "No. Our tools run 100% client-side inside your web browser. Zero patient data, bills, names, or health records are ever sent to our servers, logged, or shared."
+                "text": "Bill text entered into the Explainer Tool is processed locally in your browser and is not sent to this site's application server or stored in its database. The site may still load analytics and other third-party resources as described in the Privacy Policy."
               }
             },
             {
@@ -152,7 +154,7 @@
                 <span style="color: #64748b; font-size: 0.85rem;">Updated: September 14, 2026</span>
             </div>
             <p style="font-size: 1.05rem; line-height: 1.65; color: #0f172a; margin: 0; font-weight: 500;">
-                <strong>Written and fact-checked by M. Ibrar Hussain. This page has not been medically reviewed. Information is educational and should be verified with your insurer, provider, or a qualified professional.</strong>
+                <strong>Written and fact-checked by <a href="#author" style="color: #1d4ed8;">M. Ibrar Hussain</a>. This page has not been medically reviewed. Information is educational and should be verified with your insurer, provider, or a qualified professional.</strong>
             </p>
         </div>
 
@@ -162,8 +164,8 @@
             <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; color: #334155; font-size: 1rem; line-height: 1.6;">
                 <li><strong>Core Mission:</strong> To bridge the asymmetric knowledge gap between multi-billion-dollar hospital billing conglomerates and ordinary patients facing complex invoices.</li>
                 <li><strong>Free Educational Tools:</strong> We provide an instant, client-side medical bill decoder, step-by-step Explanation of Benefits (EOB) calculators, 3 customizable dispute letters, and a database of 57 common CPT billing codes.</li>
-                <li><strong>Privacy Architecture:</strong> Unlike online SaaS portals that upload sensitive medical records to cloud databases, our analysis is executed 100% in your local browser memory. Zero protected health information (PHI) is ever transmitted to or stored on our servers.</li>
-                <li><strong>Editorial Standards:</strong> All code benchmarks and definitions are aggregated from official public datasets, including the Centers for Medicare & Medicaid Services (CMS), Federal Register hospital pricing mandates, and the American Medical Association (AMA) CPT framework.</li>
+                <li><strong>Privacy Architecture:</strong> Bill text entered into the Explainer Tool is processed locally in your browser and is not sent to this site's application server or stored in its database. Do not enter names, member IDs, claim numbers, or other sensitive information.</li>
+                <li><strong>Editorial Standards:</strong> Code definitions and billing guidance are checked against official public sources where available. Price ranges are broad educational estimates, not quotes or guarantees.</li>
             </ul>
         </section>
 
@@ -174,7 +176,7 @@
                 In the United States, receiving medical care is frequently followed by a second trauma: the arrival of an itemized hospital bill or a multi-page document labeled <em>"THIS IS NOT A BILL"</em> (your Explanation of Benefits). 
             </p>
             <p style="font-size: 1.05rem; line-height: 1.75; color: #334155; margin-bottom: 1.25rem;">
-                Studies conducted by consumer advocacy organizations, including the <strong>Kaiser Family Foundation (KFF)</strong> and independent billing audit firms, estimate that up to <strong>70% to 80% of hospital bills contain billing errors</strong>. These range from simple clerical duplicates and unbundled routine supplies to predatory balance bills and arbitrary chargemaster markups that exceed 400% of actual operating costs.
+                Billing audits and consumer studies have reported high error rates in some samples, but results vary substantially by bill type, audit method, and definition of an error. We use this site to help patients identify questions to verify—not to declare that a particular bill is incorrect, unlawful, or fraudulent.
             </p>
             <p style="font-size: 1.05rem; line-height: 1.75; color: #334155;">
                 Patients are routinely expected to write checks for thousands of dollars without knowing what a "CPT 99284" represents, whether a facility fee was lawful under the <strong>No Surprises Act</strong>, or why their insurance company approved an "Allowed Amount" that vastly differs from the doctor's initial bill. <strong>Medical Bill Explainer was created to give everyday families the plain-English decoder ring they need to question, verify, and dispute their medical bills before parting with their hard-earned money.</strong>
@@ -182,7 +184,7 @@
         </section>
 
         <!-- Meet the Founder & Author -->
-        <section class="card" style="margin-bottom: 3.5rem; border: 1px solid #e2e8f0; padding: 2.25rem;">
+        <section id="author" class="card" style="margin-bottom: 3.5rem; border: 1px solid #e2e8f0; padding: 2.25rem;">
             <h2 style="font-size: 1.6rem; color: var(--secondary-color); margin-bottom: 1.25rem;">About the Author & Founder</h2>
             <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
                 <div style="width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #1d4ed8, #0284c7); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 800; flex-shrink: 0; box-shadow: var(--shadow-sm);">
@@ -195,7 +197,7 @@
                         Ibrar is a researcher and web technologist passionate about health data democratization, open-access consumer finance tools, and public interest software. Frustrated by the pervasive opacity of modern hospital revenue cycle management and administrative red tape, he engineered Medical Bill Explainer to aggregate fragmented public fee schedules into an intuitive, zero-overhead browser utility.
                     </p>
                     <p style="font-size: 1rem; line-height: 1.7; color: #475569;">
-                        He actively monitors federal rulemaking, including CMS Hospital Price Transparency mandates (45 CFR Part 180), annual Medicare Physician Fee Schedule revisions, and Department of Labor enforcement guidance under the No Surprises Act.
+                        He follows public guidance and rulemaking from agencies including CMS, HHS, and the Department of Labor. He is not a physician, attorney, certified coder, or insurance representative; pages are not presented as professional medical, legal, or plan-specific advice.
                     </p>
                 </div>
             </div>
@@ -205,21 +207,21 @@
         <section id="editorial-standards" style="margin-bottom: 3.5rem;">
             <h2 style="font-size: 1.85rem; color: var(--secondary-color); margin-bottom: 1rem;">Our Editorial Standards & Research Methodology</h2>
             <p style="font-size: 1.05rem; line-height: 1.75; color: #334155; margin-bottom: 1.75rem;">
-                Trust in healthcare financial information requires strict adherence to primary regulatory sources. We do not rely on sponsored commercial blogs, third-party affiliate summaries, or anecdotal message boards. Every educational guide and pricing reference is cross-referenced against authoritative bodies:
+                Trust in healthcare financial information requires careful use of primary sources. We prioritize official government guidance and identify uncertainty where rules vary by plan, provider, state, or date of service. Third-party summaries may be used for context, but they are not treated as a substitute for the governing source.
             </p>
 
             <div class="grid-2" style="gap: 1.5rem; margin-bottom: 2rem;">
                 <div class="card" style="border-top: 4px solid #1d4ed8;">
                     <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #0f172a;">1. Official Regulatory Frameworks</h3>
                     <p style="font-size: 0.95rem; line-height: 1.6; color: #475569;">
-                        We base our billing protections on the <strong>No Surprises Act (Public Law 116-260)</strong>, Consumer Financial Protection Bureau (CFPB) medical debt reporting rules, and federal Emergency Medical Treatment and Labor Act (EMTALA) guarantees.
+                        We review federal consumer-protection and billing guidance, including the No Surprises Act, CMS resources, CFPB materials, and EMTALA information. Legal protections can depend on the service, plan, provider, state, and date of care.
                     </p>
                 </div>
 
                 <div class="card" style="border-top: 4px solid #10b981;">
                     <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #0f172a;">2. CMS Datasets & NCCI Edits</h3>
                     <p style="font-size: 0.95rem; line-height: 1.6; color: #475569;">
-                        We cross-reference code bundling rules against the <strong>National Correct Coding Initiative (NCCI)</strong> Procedure-to-Procedure (PTP) edits and the <strong>Medicare Physician Fee Schedule (MPFS)</strong> relative value units (RVUs).
+                        Where relevant, we consult CMS National Correct Coding Initiative (NCCI) materials and Medicare Physician Fee Schedule (MPFS) resources. These references do not determine a user's commercial insurance payment or medical necessity.
                     </p>
                 </div>
 
@@ -233,7 +235,7 @@
                 <div class="card" style="border-top: 4px solid #6366f1;">
                     <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #0f172a;">4. Objective Fair Price Benchmarks</h3>
                     <p style="font-size: 0.95rem; line-height: 1.6; color: #475569;">
-                        Our estimated cash price brackets reflect regional commercial fair-market averages synthesized from public hospital machine-readable files, CMS standard charges, and consumer cost datasets.
+                        Our price brackets are broad educational estimates assembled from public pricing and reimbursement references. They are not quotes, negotiated insurance rates, or predictions of a specific patient's responsibility. Facility fees, professional fees, geography, network status, and plan rules can materially change the amount.
                     </p>
                 </div>
             </div>
@@ -242,9 +244,28 @@
             <div style="background: #f1f5f9; border-radius: 8px; padding: 1.25rem 1.5rem; border: 1px solid #cbd5e1;">
                 <h4 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: #1e293b;">Correction & Update Policy</h4>
                 <p style="font-size: 0.92rem; line-height: 1.6; color: #475569; margin: 0;">
-                    Healthcare laws and CPT code definitions evolve annually. If you spot a discrepancy, an outdated code description, or a broken statutory citation, please notify us immediately. We review verified editorial submissions and deploy corrections within 48 hours.
+                    Healthcare laws, payer policies, and CPT code definitions evolve. If you spot a discrepancy, outdated description, or broken citation, please email us with the relevant page and source. Verified corrections are reviewed and prioritized for a future update.
                 </p>
             </div>
+        </section>
+
+        <section id="sources" class="card" style="margin-bottom: 3.5rem; border: 1px solid #e2e8f0; padding: 2.25rem;">
+            <h2 style="font-size: 1.6rem; color: var(--secondary-color); margin-bottom: 1rem;">Primary Sources</h2>
+            <p style="font-size: 1rem; line-height: 1.7; color: #475569; margin-bottom: 1rem;">
+                These sources provide general background for the site's billing and insurance explanations. Always check the current guidance that applies to your plan and situation.
+            </p>
+            <ul style="margin-left: 1.5rem; line-height: 1.8; color: #475569;">
+                <li><a href="https://www.cms.gov/nosurprises/consumers" rel="noopener noreferrer">CMS: No Surprises Act consumer resources</a></li>
+                <li><a href="https://www.cms.gov/medical-bill-rights" rel="noopener noreferrer">CMS: Medical bill rights and resources</a></li>
+                <li><a href="https://www.cms.gov/medicare/coding-billing" rel="noopener noreferrer">CMS: Medicare coding and billing resources</a></li>
+                <li><a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" rel="noopener noreferrer">CMS: Medicare Physician Fee Schedule</a></li>
+                <li><a href="https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-149" rel="noopener noreferrer">Electronic Code of Federal Regulations: No Surprises Act regulations</a></li>
+                <li><a href="https://www.consumerfinance.gov/consumer-tools/medical-debt/" rel="noopener noreferrer">CFPB: Medical debt consumer resources</a></li>
+                <li><a href="https://www.ama-assn.org/practice-management/cpt" rel="noopener noreferrer">AMA: CPT coding information</a></li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 1rem; margin-bottom: 0;">
+                Sources are checked during content updates; linked agency pages may change their URLs or guidance.
+            </p>
         </section>
 
         <!-- Our Privacy Promise -->
@@ -258,7 +279,7 @@
             </p>
             <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;">
                 <p style="font-size: 0.95rem; line-height: 1.6; color: #1e40af; margin: 0; font-weight: 500;">
-                    When you paste your medical bill into our Explainer Tool or use our EOB Discrepancy Calculator, the code executes <strong>purely in your local browser's JavaScript engine</strong>. No bill text, patient identifiers, or financial numbers are ever transmitted over the network or saved to any database.
+                    Bill text entered into our Explainer Tool and values entered into the EOB calculator are processed locally in your browser. The bill text is not sent to this site's application server or stored in its database. The site may still load analytics and other third-party resources described in the <a href="privacy-policy.html" style="font-weight: 600; text-decoration: underline;">Privacy Policy</a>; do not enter names, member IDs, claim numbers, or other sensitive information.
                 </p>
             </div>
             <p style="font-size: 0.95rem; line-height: 1.6; color: #64748b; margin: 0;">
@@ -290,7 +311,7 @@
                 <a href="mailto:contact@eobexplanation.com" style="font-size: 1.1rem; font-weight: 700; color: #1d4ed8; text-decoration: none;">contact@eobexplanation.com</a>
             </div>
             <p style="font-size: 0.85rem; color: #64748b; margin-top: 1rem;">
-                We respond to all verified consumer, reader, and media inquiries within 2 business days.
+                We review correction, reader, and media inquiries as time permits. Please do not send medical records, member IDs, claim numbers, or other sensitive personal information by email.
             </p>
         </section>
 

@@ -207,7 +207,7 @@ cptCodes.forEach(cpt => {
           "name": "Medical Bill Explainer",
           "logo": {
             "@type": "ImageObject",
-            "url": `${domain}/logo.png` 
+            "url": `${domain}/logo.svg`
           }
         },
         "datePublished": "2024-01-14",

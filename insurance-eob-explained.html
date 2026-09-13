@@ -58,21 +58,24 @@
         {
           "@type": "Article",
           "headline": "How to Read an Insurance Explanation of Benefits (EOB) Statement",
-          "description": "Comprehensive patient guide to decoding medical insurance EOBs, Allowed Amount, patient responsibility, and spotting hospital balance billing errors.",
+          "description": "Comprehensive patient guide to decoding medical insurance EOBs, allowed amounts, patient responsibility, and checking medical bills for possible discrepancies.",
           "author": {
-            "@type": "Organization",
-            "name": "Medical Bill Explainer"
+            "@type": "Person",
+            "@id": "https://eobexplanation.com/about.html#author",
+            "name": "M. Ibrar Hussain",
+            "url": "https://eobexplanation.com/about.html#author",
+            "jobTitle": "Founder, Lead Researcher & Technologist"
           },
           "publisher": {
             "@type": "Organization",
             "name": "Medical Bill Explainer",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://eobexplanation.com/logo.png"
+              "url": "https://eobexplanation.com/logo.svg"
             }
           },
           "datePublished": "2024-01-14",
-          "dateModified": "2026-09-11"
+          "dateModified": "2026-09-14"
         },
         {
           "@type": "WebApplication",
@@ -93,7 +96,7 @@
               "name": "Is an Explanation of Benefits (EOB) a bill?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "No. An EOB is NOT a bill. It is an informational statement sent by your health insurer explaining what medical services were billed by your provider, what discount was applied, what insurance paid, and what portion you may legally owe."
+                "text": "No. An EOB is not a bill. It is an informational statement sent by your health insurer explaining what medical services were billed, what discount was applied, what insurance paid, and what amount the plan assigns to your estimated patient responsibility."
               }
             },
             {
@@ -101,7 +104,7 @@
               "name": "What does Allowed Amount mean on an EOB?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "The Allowed Amount (also called Eligible Expense or Negotiated Rate) is the maximum dollar amount your insurer agreed to pay for that service under their provider contract. In-network doctors are legally forbidden from charging you the difference between the higher Billed Amount and the Allowed Amount."
+                "text": "The Allowed Amount (also called Eligible Expense or Negotiated Rate) is the amount the plan recognizes for a covered service under its rules and, when applicable, a provider contract. Whether a provider may bill the difference depends on network status, plan rules, and applicable law."
               }
             },
             {
@@ -109,7 +112,7 @@
               "name": "What does 'You May Owe' or 'Patient Responsibility' mean?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Patient Responsibility is the legal dollar amount you owe the healthcare provider according to your health insurance policy. It is calculated by taking the Allowed Amount and subtracting what insurance paid, representing your copay, deductible, and coinsurance."
+                "text": "Patient Responsibility is the amount the EOB assigns to your estimated out-of-pocket share under the claim and plan rules. It may include a copay, deductible, or coinsurance; confirm the final amount with the provider and insurer."
               }
             },
             {
@@ -117,7 +120,7 @@
               "name": "How do I read a UnitedHealthcare (UHC) EOB?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "On a UnitedHealthcare EOB, locate the 'Claim Detail' table. Look for 'Amount Billed', then 'Plan Discount' (the contractual write-off), 'Amount Covered' (Allowed Amount), and finally 'Your Responsibility'. Compare the 'Your Responsibility' column directly with the doctor's final invoice."
+                "text": "UnitedHealthcare EOBs may include a claim-detail table with labels such as 'Amount Billed', 'Plan Discount', 'Amount Covered', and 'Your Responsibility'. Compare the figures on the specific EOB with the provider's invoice and contact the insurer if a label or amount is unclear."
               }
             },
             {
@@ -125,7 +128,7 @@
               "name": "How do I read a Medicare Summary Notice (MSN)?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Medicare sends a Medicare Summary Notice (MSN) every 3 months. Look at Section 4: 'Claims'. Check the column titled 'Maximum You May Be Billed By Provider'. A participating Medicare doctor can never bill you more than this amount."
+                "text": "Medicare generally sends a Medicare Summary Notice (MSN) every 3 months. Review the claims section and the 'Maximum You May Be Billed' information, then confirm provider participation and Medicare rules for the specific service."
               }
             },
             {
@@ -169,9 +172,12 @@
 
         <!-- Header Section -->
         <section class="section" style="margin-bottom: 2rem;">
-            <span class="badge badge-success" style="margin-bottom: 0.75rem;">Updated for 2026</span>
+            <span class="badge badge-success" style="margin-bottom: 0.75rem;">Reviewed September 14, 2026</span>
             <h1 style="font-size: 2.65rem; margin-bottom: 1rem;">How to Read an Insurance Explanation of Benefits (EOB)</h1>
             <p style="font-size: 1.2rem; color: #475569; max-width: 820px;">It looks like a bill, says <em>"THIS IS NOT A BILL"</em> in bold letters, and confuses millions of patients. Here is your step-by-step decoding guide, discrepancy calculator, and dispute scripts.</p>
+            <div style="margin-top: 1rem; color: #64748b; font-size: 0.9rem;">
+                Written and fact-checked by <a href="about.html#author">M. Ibrar Hussain</a>. This page is not medically reviewed.
+            </div>
         </section>
 
         <!-- Golden Rule Alert Box -->
@@ -181,8 +187,8 @@
                     <span style="font-size: 1.5rem;">🛑</span>
                     <h3 style="color: #b91c1c; font-size: 1.25rem; font-weight: 700;">The #1 Golden Rule: Is an EOB a Bill?</h3>
                 </div>
-                <p style="font-size: 1.05rem; color: #1e293b; font-weight: 600; margin-bottom: 0.5rem;">NO. NEVER pay a medical bill until you have cross-checked it with your insurance EOB.</p>
-                <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">An EOB is a financial report from your health insurance company showing what your doctor charged, how much was discounted under contract, what insurance paid, and what portion you actually owe. If the hospital bill asks for <strong>$650</strong>, but your EOB says <strong>"Patient Responsibility: $120"</strong>, <span style="text-decoration: underline; font-weight: 600;">you only owe $120</span>.</p>
+                <p style="font-size: 1.05rem; color: #1e293b; font-weight: 600; margin-bottom: 0.5rem;">No. An EOB is an explanation of how your insurer processed a claim, not a provider invoice.</p>
+                <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">An EOB may show what your provider billed, the amount recognized by your plan, what insurance paid, and an estimated patient responsibility. If a provider bill asks for <strong>$650</strong> but the EOB shows <strong>$120</strong> as your patient responsibility, compare the documents and contact the provider or insurer before paying or disputing the difference.</p>
             </div>
         </section>
 
@@ -194,10 +200,10 @@
                         <span class="badge" style="background: #e0f2fe; color: #0369a1; margin-bottom: 0.35rem;">Free Interactive Patient Tool</span>
                         <h2 style="font-size: 1.75rem; margin: 0; color: var(--secondary-color);">EOB vs. Bill Discrepancy & Balance Billing Calculator</h2>
                     </div>
-                    <span style="font-size: 0.85rem; color: #64748b;">🔒 100% Private & In-Browser</span>
+                    <span style="font-size: 0.85rem; color: #64748b;">Analyzed locally in your browser</span>
                 </div>
 
-                <p style="margin-top: 1rem; color: #475569; font-size: 0.95rem;">Enter the numbers from your paper or digital EOB and your doctor's bill to instantly see if you are being overcharged or illegally balance-billed.</p>
+                <p style="margin-top: 1rem; color: #475569; font-size: 0.95rem;">Enter figures from the same claim and service line to compare the EOB estimate with the provider statement. This is an educational check, not a legal determination.</p>
 
                 <div class="calc-grid">
                     <!-- Left: Inputs -->
@@ -256,19 +262,19 @@
 
                             <div class="calc-metric highlight-metric">
                                 <div>
-                                    <span class="metric-label" style="font-weight: 700; color: var(--primary-color);">Legal Patient Responsibility:</span>
-                                    <p style="font-size: 0.78rem; color: #475569; margin-top: 2px;">(What you legally owe according to your EOB)</p>
+                                    <span class="metric-label" style="font-weight: 700; color: var(--primary-color);">Estimated Patient Responsibility:</span>
+                                    <p style="font-size: 0.78rem; color: #475569; margin-top: 2px;">(Amount assigned to you on this claim calculation)</p>
                                 </div>
                                 <span class="metric-val" id="resResponsibility">$90.00</span>
                             </div>
 
                             <!-- Audit Status Alert -->
-                            <div id="statusCard" style="margin-top: 1.25rem; padding: 1rem; border-radius: 8px; background: #fee2e2; border: 1px solid #fca5a5;">
+                            <div id="statusCard" role="status" aria-live="polite" style="margin-top: 1.25rem; padding: 1rem; border-radius: 8px; background: #fee2e2; border: 1px solid #fca5a5;">
                                 <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
                                     <span id="statusIcon">⚠️</span>
-                                    <strong id="statusTitle" style="color: #b91c1c; font-size: 0.95rem;">Discrepancy Detected: Overbilling Alert!</strong>
+                                    <strong id="statusTitle" style="color: #b91c1c; font-size: 0.95rem;">Possible Discrepancy to Verify</strong>
                                 </div>
-                                <p id="statusDesc" style="font-size: 0.85rem; color: #7f1d1d; line-height: 1.4;">The provider billed you <strong>$500.00</strong>, but your EOB states you only owe <strong>$90.00</strong>. You may be facing an illegal balance bill of <strong>$410.00</strong>!</p>
+                                <p id="statusDesc" style="font-size: 0.85rem; color: #7f1d1d; line-height: 1.4;">The provider statement is <strong>$410.00</strong> higher than the calculated EOB responsibility. Verify network status, claim lines, payments, and plan rules with the provider and insurer.</p>
                             </div>
                         </div>
 
@@ -277,7 +283,7 @@
                             <label style="font-weight: 700; font-size: 0.85rem; color: var(--secondary-color);">📞 Phone Dispute Script (Read to Hospital Billing):</label>
                             <div class="script-box">
                                 <button class="copy-btn" id="copyScriptBtn">Copy Script</button>
-                                <span id="scriptText">"Hi, I received statement #[Number] for $500.00. My insurance EOB shows the allowed amount is $450.00 and my legal patient responsibility is only $90.00. Under your in-network provider contract, the remaining $410.00 is a contractual write-off that cannot be billed to me. Please adjust my balance to $90.00."</span>
+                                <span id="scriptText">"Hi, I received statement #[Number] for $500.00. My insurance EOB shows an estimated patient responsibility of $90.00. Could you please review the claim lines, payments, network status, and remaining balance with me?"</span>
                             </div>
                         </div>
                     </div>
@@ -288,7 +294,7 @@
         <!-- Allowed Amount vs Billed Amount Deep Dive -->
         <section class="section">
             <h2 class="section-title">Allowed Amount vs. Billed Amount: Decoded</h2>
-            <p style="text-align: center; max-width: 750px; margin: -1rem auto 2rem auto; color: #64748b;">Understanding the gap between what doctors charge and what insurance contracts allow is the secret to never paying inflated hospital bills.</p>
+            <p style="text-align: center; max-width: 750px; margin: -1rem auto 2rem auto; color: #64748b;">Understanding the gap between provider charges and plan-allowed amounts can help you review medical bills more confidently.</p>
 
             <div class="table-responsive">
                 <table class="eob-table">
@@ -315,15 +321,15 @@
                         </tr>
                         <tr>
                             <td><strong>Contractual Adjustment</strong> (or "Plan Discount")</td>
-                            <td>The difference between Billed and Allowed. The provider agrees to write this off permanently as a condition of being in-network.</td>
-                            <td>Written off to $0.</td>
-                            <td><span class="badge badge-danger">Illegal to bill you</span></td>
+                            <td>The difference between Billed and Allowed that may reflect a provider contract or plan adjustment.</td>
+                            <td>Usually not assigned to the patient under the applicable network agreement.</td>
+                            <td><span class="badge badge-warning">Verify network and plan rules</span></td>
                         </tr>
                         <tr>
                             <td><strong>Patient Responsibility</strong> (or "You May Owe")</td>
-                            <td>Your total out-of-pocket share (Deductible + Coinsurance + Copay). This is the <strong>only</strong> number that should appear on your bill.</td>
+                            <td>Your total out-of-pocket share (Deductible + Coinsurance + Copay) assigned by the plan for that claim.</td>
                             <td><strong>You pay this portion.</strong></td>
-                            <td><span class="badge badge-warning">Exact invoice match</span></td>
+                            <td><span class="badge badge-warning">Compare with invoice</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -345,7 +351,7 @@
                         <li><strong>Amount Billed:</strong> What your doctor asked for.</li>
                         <li><strong>Plan Discount:</strong> The UHC contracted write-off. Verify this is deducted.</li>
                         <li><strong>Your Plan Paid:</strong> What UHC paid directly to the provider.</li>
-                        <li><strong>Your Responsibility:</strong> Located in the far right column. Often highlighted in blue. This is the only number you are liable for.</li>
+                        <li><strong>Your Responsibility:</strong> Often shown near the claim totals. Treat it as the plan's claim estimate and confirm the final balance with the provider.</li>
                         <li><strong>Remark Codes:</strong> Check footnotes at the bottom (e.g., Code <em>59</em> or <em>97</em>) if an item is marked $0.</li>
                     </ul>
                 </div>
@@ -359,7 +365,7 @@
                     <ul style="margin-left: 1.25rem; font-size: 0.925rem; color: #334155; line-height: 1.7;">
                         <li><strong>Section 4 (Claims List):</strong> Lists each date of service and medical provider.</li>
                         <li><strong>"Medicare Approved" Column:</strong> This is Medicare's allowed fee schedule rate.</li>
-                        <li><strong>"Maximum You May Be Billed":</strong> Highlights the exact legal ceiling. Participating Medicare providers cannot exceed this figure.</li>
+                        <li><strong>"Maximum You May Be Billed":</strong> Shows Medicare's estimate for the applicable claim. Review participation status and Medicare guidance for the service.</li>
                         <li><strong>Part B Deductible Tracking:</strong> The front page displays how much of your annual Part B deductible has been met.</li>
                     </ul>
                 </div>
@@ -400,22 +406,22 @@
                 <div class="grid-2">
                     <div style="background: #f8fafc; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
                         <strong style="color: var(--primary-color); font-size: 1.05rem;">CO-45 (Contractual Adjustment)</strong>
-                        <p style="font-size: 0.88rem; color: #334155; margin-top: 0.35rem;">"Charges exceed fee schedule / allowed amount." The doctor must write off this entire amount. You owe $0 for this code.</p>
+                        <p style="font-size: 0.88rem; color: #334155; margin-top: 0.35rem;">Often indicates that the submitted charge exceeds the payer's fee schedule or allowed amount. The patient impact depends on network status and the other claim adjustments.</p>
                     </div>
 
                     <div style="background: #f8fafc; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
                         <strong style="color: #b45309; font-size: 1.05rem;">PR-1 (Deductible Amount)</strong>
-                        <p style="font-size: 0.88rem; color: #334155; margin-top: 0.35rem;">Assigned to Patient Responsibility because you have not met your annual plan deductible yet. You owe this amount.</p>
+                        <p style="font-size: 0.88rem; color: #334155; margin-top: 0.35rem;">Often indicates that an amount was assigned to the deductible under the plan. Check the EOB and benefits summary for the amount and remaining deductible.</p>
                     </div>
 
                     <div style="background: #f8fafc; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
                         <strong style="color: #b45309; font-size: 1.05rem;">PR-2 (Coinsurance) & PR-3 (Copay)</strong>
-                        <p style="font-size: 0.88rem; color: #334155; margin-top: 0.35rem;">Your agreed cost-sharing percentage (e.g., 20%) or flat office visit copay. You owe this amount.</p>
+                        <p style="font-size: 0.88rem; color: #334155; margin-top: 0.35rem;">Often represents coinsurance or a copay assigned under the plan. Confirm the amount and service details on the EOB.</p>
                     </div>
 
                     <div style="background: #f8fafc; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
                         <strong style="color: #b91c1c; font-size: 1.05rem;">CO-97 (Bundled / Inclusive Service)</strong>
-                        <p style="font-size: 0.88rem; color: #334155; margin-top: 0.35rem;">The service was included in another primary procedure. The doctor cannot unbundle and bill this separately to you.</p>
+                        <p style="font-size: 0.88rem; color: #334155; margin-top: 0.35rem;">Often indicates that the payer considered the service included in another procedure. Ask the insurer or provider to explain the adjustment before disputing the bill.</p>
                     </div>
                 </div>
 
@@ -463,7 +469,7 @@
 
             <details>
                 <summary>What does "You May Owe" mean on an EOB?</summary>
-                <p>"You May Owe" is the insurer's estimated patient responsibility based on your plan design (deductible, copay, coinsurance). It is not an invoice—it simply notifies you of what your doctor is legally permitted to bill you once their statement arrives.</p>
+                <p>"You May Owe" is the insurer's estimated patient responsibility based on your plan design (deductible, copay, and coinsurance). It is not an invoice; compare it with the provider statement and contact the insurer if the amount or claim status is unclear.</p>
             </details>
         </section>
 
@@ -507,7 +513,7 @@
                     </table>
                 </div>
 
-                <p style="font-size: 0.95rem; line-height: 1.6; color: #475569; margin-top: 1rem;"><strong>Key Rule:</strong> Always wait for your EOB before paying any medical bill. If the hospital bill amount is higher than the "Patient Responsibility" shown on your EOB, you may be facing <strong>illegal balance billing</strong>. Use our <a href="#" onclick="document.querySelector('.calc-card').scrollIntoView({behavior:'smooth'}); return false;" style="font-weight: 600; text-decoration: underline;">calculator above</a> to check for discrepancies, or read our <a href="bill-dispute-guide.html" style="font-weight: 600; text-decoration: underline;">dispute guide</a> to learn how to fight it.</p>
+                <p style="font-size: 0.95rem; line-height: 1.6; color: #475569; margin-top: 1rem;"><strong>Practical step:</strong> Compare the provider statement with the EOB after the claim is processed. If the amounts differ, there may be a billing or claim discrepancy, but the difference is not automatically illegal. Check the claim lines, network status, plan rules, and applicable law. Use our <a href="#" onclick="document.querySelector('.calc-card').scrollIntoView({behavior:'smooth'}); return false;" style="font-weight: 600; text-decoration: underline;">calculator above</a> as an educational comparison, or read our <a href="bill-dispute-guide.html" style="font-weight: 600; text-decoration: underline;">dispute guide</a>.</p>
             </div>
         </section>
 
@@ -522,12 +528,27 @@
                     <ul style="list-style-type: disc; margin-left: 1.5rem; color: #334155; line-height: 1.7; font-size: 0.95rem;">
                         <li>Hospital charges (Billed Amount): <strong>$1,500</strong></li>
                         <li>Insurance negotiated rate (Allowed Amount): <strong>$450</strong></li>
-                        <li>The $1,050 difference is a <strong>contractual write-off</strong> — you never owe this</li>
+                        <li>The $1,050 difference is shown as a <strong>contractual adjustment</strong> on this example claim</li>
                         <li>Your share is calculated from the $450 Allowed Amount, not from $1,500</li>
                     </ul>
                 </div>
 
-                <p style="font-size: 0.95rem; line-height: 1.6; color: #475569;"><strong>Why this matters:</strong> In-network doctors are legally forbidden from charging you the difference between the Billed Amount and the Allowed Amount. This difference (often 50-80% of the sticker price) is automatically written off. If a provider tries to bill you based on their full charge instead of the Allowed Amount, that is <strong>illegal balance billing</strong> and you have the right to dispute it.</p>
+                <p style="font-size: 0.95rem; line-height: 1.6; color: #475569;"><strong>Why this matters:</strong> For many in-network claims, the difference between the billed and allowed amounts is handled as a contractual adjustment. The result can differ for out-of-network care, non-covered services, government programs, or special protections. If your provider's bill does not match the processed claim, ask both the provider and insurer to explain the difference before deciding how to dispute it.</p>
+            </div>
+        </section>
+
+        <!-- Sources and limitations -->
+        <section class="section">
+            <div class="card">
+                <h2>Sources, Limitations, and Further Reading</h2>
+                <p style="color: #475569; line-height: 1.6;">This guide is educational and uses simplified examples. Plan documents, claim details, network status, state law, and the date of service can change the result. Do not enter names, member IDs, claim numbers, Social Security numbers, or other sensitive information into the calculator.</p>
+                <ul style="margin: 1rem 0 0 1.25rem; line-height: 1.8;">
+                    <li><a href="https://www.cms.gov/medical-bill-rights">CMS Medical Bill Rights</a></li>
+                    <li><a href="https://www.cms.gov/nosurprises/consumers">CMS No Surprises Act Consumer Resources</a></li>
+                    <li><a href="https://www.medicare.gov/claims-appeals">Medicare Claims and Appeals</a></li>
+                    <li><a href="https://www.healthcare.gov/glossary/">HealthCare.gov Glossary</a></li>
+                    <li><a href="https://www.consumerfinance.gov/consumer-tools/medical-debt/">CFPB Medical Debt Resources</a></li>
+                </ul>
             </div>
         </section>
 
@@ -581,10 +602,26 @@
         const copyScriptBtn = document.getElementById('copyScriptBtn');
 
         function updateCalc() {
-            const billed = parseFloat(calcBilled.value) || 0;
-            const allowed = parseFloat(calcAllowed.value) || 0;
-            const paid = parseFloat(calcPaid.value) || 0;
-            const hospitalBill = parseFloat(calcHospitalBill.value) || 0;
+            const values = [calcBilled, calcAllowed, calcPaid, calcHospitalBill].map(input => Number(input.value));
+            const [billed, allowed, paid, hospitalBill] = values;
+            const invalidInput = values.some(value => !Number.isFinite(value) || value < 0);
+            const inconsistentInput = allowed > billed || paid > allowed;
+
+            if (invalidInput || inconsistentInput) {
+                statusCard.style.background = '#fef3c7';
+                statusCard.style.borderColor = '#fcd34d';
+                statusIcon.textContent = '⚠️';
+                statusTitle.textContent = 'Please Check the Amounts';
+                statusTitle.style.color = '#92400e';
+                statusDesc.textContent = invalidInput
+                    ? 'Enter zero or greater amounts in all four fields.'
+                    : 'For this simplified comparison, Allowed Amount cannot exceed Billed Amount and Insurance Paid cannot exceed Allowed Amount.';
+                resDiscount.textContent = '—';
+                resPaid.textContent = '—';
+                resResponsibility.textContent = '—';
+                scriptText.textContent = '"Please review the amounts on my EOB and provider statement. I want to confirm that the figures are from the same claim and service line."';
+                return;
+            }
 
             const discount = Math.max(0, billed - allowed);
             const responsibility = Math.max(0, allowed - paid);
@@ -600,19 +637,19 @@
                 statusCard.style.background = '#fee2e2';
                 statusCard.style.borderColor = '#fca5a5';
                 statusIcon.textContent = '⚠️';
-                statusTitle.textContent = 'Discrepancy Detected: Overbilling Alert!';
+                statusTitle.textContent = 'Possible Discrepancy to Verify';
                 statusTitle.style.color = '#b91c1c';
-                statusDesc.innerHTML = `The provider billed you <strong>$${hospitalBill.toFixed(2)}</strong>, but your EOB states you only owe <strong>$${responsibility.toFixed(2)}</strong>. You may be facing an illegal balance bill of <strong>$${discrepancy.toFixed(2)}</strong>!`;
+                statusDesc.innerHTML = `The provider statement is <strong>$${discrepancy.toFixed(2)}</strong> higher than the calculated EOB responsibility. Verify network status, claim lines, payments, and plan rules with the provider and insurer.`;
 
-                scriptText.textContent = `"Hi, I received bill #[Number] for $${hospitalBill.toFixed(2)}. My insurance EOB shows the contracted allowed amount is $${allowed.toFixed(2)} and my legal patient responsibility is only $${responsibility.toFixed(2)}. Under your in-network provider contract, the remaining $${discrepancy.toFixed(2)} is a write-off that cannot be billed to me. Please adjust my balance to $${responsibility.toFixed(2)}."`;
+                scriptText.textContent = `"Hi, I received bill #[Number] for $${hospitalBill.toFixed(2)}. My insurance EOB shows an estimated patient responsibility of $${responsibility.toFixed(2)}. Could you please review the claim lines, payments, network status, and remaining balance with me?"`;
             } else if (Math.abs(discrepancy) <= 1) {
                 // Match
                 statusCard.style.background = '#dcfce7';
                 statusCard.style.borderColor = '#86efac';
                 statusIcon.textContent = '✅';
-                statusTitle.textContent = 'Numbers Match: Bill is Accurate to EOB';
+                statusTitle.textContent = 'Numbers Match: Compare Confirmed';
                 statusTitle.style.color = '#15803d';
-                statusDesc.innerHTML = `The provider's invoice ($${hospitalBill.toFixed(2)}) perfectly matches your legal patient responsibility ($${responsibility.toFixed(2)}). This is an accurate bill based on your insurance plan benefits.`;
+                statusDesc.innerHTML = `The provider's invoice ($${hospitalBill.toFixed(2)}) matches the calculated EOB responsibility ($${responsibility.toFixed(2)}). Confirm the claim status and service details before paying.`;
 
                 scriptText.textContent = `"Hi, I confirmed that my bill of $${hospitalBill.toFixed(2)} matches my insurance EOB. Can you offer a cash-pay or prompt-payment discount if I pay the full balance today?"`;
             } else {
@@ -633,8 +670,17 @@
         });
 
         copyScriptBtn.addEventListener('click', () => {
+            if (!navigator.clipboard || !navigator.clipboard.writeText) {
+                copyScriptBtn.textContent = 'Copy unavailable';
+                return;
+            }
             navigator.clipboard.writeText(scriptText.textContent).then(() => {
                 copyScriptBtn.textContent = 'Copied! ✓';
+                setTimeout(() => {
+                    copyScriptBtn.textContent = 'Copy Script';
+                }, 2000);
+            }).catch(() => {
+                copyScriptBtn.textContent = 'Copy failed';
                 setTimeout(() => {
                     copyScriptBtn.textContent = 'Copy Script';
                 }, 2000);
