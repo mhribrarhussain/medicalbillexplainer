@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const activeNavLink = document.querySelector('.nav-links a.active');
+    if (activeNavLink) {
+        activeNavLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+
     const billInput = document.getElementById('billInput');
     const analyzeBtn = document.getElementById('analyzeBtn');
     const resultsArea = document.getElementById('resultsArea');
