@@ -12,8 +12,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Read an Insurance EOB (2026 Guide) + Free Discrepancy Calculator</title>
-    <meta name="description" content="Learn how to read your Explanation of Benefits (EOB). Decode Allowed Amount vs Billed, spot balance billing errors, and calculate what you legally owe with our free tool.">
+    <title>How to Read an EOB (Explanation of Benefits) — 2026 Guide + Free Calculator</title>
+    <meta name="description" content="Learn how to read your Explanation of Benefits (EOB) step by step. Understand Allowed Amount, Patient Responsibility, and Billed Amount. Free EOB vs. bill discrepancy calculator to check if your doctor is overcharging you.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
     </noscript>
     <link rel="stylesheet" href="style.css">
-    <link rel="canonical" href="https://medicalbillexplainer.netlify.app/insurance-eob-explained.html">
+    <link rel="canonical" href="https://eobexplanation.com/insurance-eob-explained.html">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -40,7 +40,7 @@
             "name": "Medical Bill Explainer",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://medicalbillexplainer.netlify.app/logo.png"
+              "url": "https://eobexplanation.com/logo.png"
             }
           },
           "datePublished": "2024-01-14",
@@ -120,9 +120,9 @@
         <div class="nav-container">
             <a href="index.html" class="logo">Medical Bill Explainer</a>
             <nav class="nav-links">
+                <a href="codes.html">Browse Codes</a>
                 <a href="medical-bill-explainer.html">Explainer Tool</a>
-                <a href="index.html#search">Search Codes</a>
-                <a href="insurance-eob-explained.html" class="active">EOB Guide & Calculator</a>
+                <a href="insurance-eob-explained.html" class="active">EOB Guide</a>
                 <a href="bill-dispute-guide.html">Dispute Guide</a>
             </nav>
         </div>
@@ -435,14 +435,78 @@
             </details>
         </section>
 
+        <!-- New Section: EOB vs Bill (targets: "eob vs bill", "is an eob a bill", "explanation of benefits vs bill") -->
+        <section class="section">
+            <div class="card" style="border-left: 4px solid var(--primary-color);">
+                <h2 style="margin-bottom: 1rem;">Is an EOB the Same as a Bill? (EOB vs Medical Bill)</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: #334155; margin-bottom: 1rem;"><strong>No.</strong> An Explanation of Benefits (EOB) and a medical bill are two completely different documents, even though they often arrive around the same time and look confusingly similar.</p>
+                
+                <div class="table-responsive">
+                    <table class="eob-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>EOB (Explanation of Benefits)</th>
+                                <th>Medical Bill (Invoice)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Sent by</strong></td>
+                                <td>Your insurance company</td>
+                                <td>Your doctor or hospital</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Is it a bill?</strong></td>
+                                <td>No — it is informational only</td>
+                                <td>Yes — this requests payment</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Shows</strong></td>
+                                <td>What was charged, discounted, paid by insurance, and your legal share</td>
+                                <td>The total amount the provider wants you to pay</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Action required</strong></td>
+                                <td>Review for accuracy and save for records</td>
+                                <td>Compare with EOB before paying</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="font-size: 0.95rem; line-height: 1.6; color: #475569; margin-top: 1rem;"><strong>Key Rule:</strong> Always wait for your EOB before paying any medical bill. If the hospital bill amount is higher than the "Patient Responsibility" shown on your EOB, you may be facing <strong>illegal balance billing</strong>. Use our <a href="#" onclick="document.querySelector('.calc-card').scrollIntoView({behavior:'smooth'}); return false;" style="font-weight: 600; text-decoration: underline;">calculator above</a> to check for discrepancies, or read our <a href="bill-dispute-guide.html" style="font-weight: 600; text-decoration: underline;">dispute guide</a> to learn how to fight it.</p>
+            </div>
+        </section>
+
+        <!-- New Section: Allowed Amount (targets: "allowed amount explanation", "what does allowed amount mean on an eob", "accepted amount vs billed") -->
+        <section class="section">
+            <div class="card" style="border-left: 4px solid #10b981;">
+                <h2 style="margin-bottom: 1rem;">What Does "Allowed Amount" Mean on an EOB?</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: #334155; margin-bottom: 1rem;">The <strong>Allowed Amount</strong> (also called <em>Eligible Amount</em>, <em>Negotiated Rate</em>, or <em>Accepted Amount</em>) is the maximum dollar amount your health insurance company has agreed to pay for a specific medical service under their contract with your in-network provider.</p>
+                
+                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem;">
+                    <p style="font-size: 0.95rem; color: #166534; margin-bottom: 0.5rem;"><strong>Example:</strong></p>
+                    <ul style="list-style-type: disc; margin-left: 1.5rem; color: #334155; line-height: 1.7; font-size: 0.95rem;">
+                        <li>Hospital charges (Billed Amount): <strong>$1,500</strong></li>
+                        <li>Insurance negotiated rate (Allowed Amount): <strong>$450</strong></li>
+                        <li>The $1,050 difference is a <strong>contractual write-off</strong> — you never owe this</li>
+                        <li>Your share is calculated from the $450 Allowed Amount, not from $1,500</li>
+                    </ul>
+                </div>
+
+                <p style="font-size: 0.95rem; line-height: 1.6; color: #475569;"><strong>Why this matters:</strong> In-network doctors are legally forbidden from charging you the difference between the Billed Amount and the Allowed Amount. This difference (often 50-80% of the sticker price) is automatically written off. If a provider tries to bill you based on their full charge instead of the Allowed Amount, that is <strong>illegal balance billing</strong> and you have the right to dispute it.</p>
+            </div>
+        </section>
+
         <!-- Bottom CTA -->
-        <section class="section" style="text-align: center;">
+        <section class="section" style="text-align: center; margin-top: 3rem;">
             <div class="card" style="background: #0f172a; color: #fff; padding: 3rem 1.5rem;">
                 <h2 style="color: #fff; font-size: 2rem; margin-bottom: 0.75rem;">Need Help With Individual CPT Procedure Codes?</h2>
                 <p style="color: #94a3b8; max-width: 600px; margin: 0 auto 1.75rem auto;">Paste your complete bill or search any 5-digit code to see fair US price ranges and questions to ask billing.</p>
                 <div class="cta-buttons">
                     <a href="medical-bill-explainer.html" class="btn btn-primary" style="background: #2563eb;">Try Bill Explainer Tool</a>
-                    <a href="index.html#search" class="btn btn-secondary">Search CPT Codes</a>
+                    <a href="codes.html" class="btn btn-secondary">Browse CPT Codes</a>
                 </div>
             </div>
         </section>

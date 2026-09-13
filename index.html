@@ -13,6 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Bill Explainer - Plain English Hospital Bill Help</title>
+    <meta name="description" content="Free medical bill explainer & decoder tool. Paste your hospital bill to identify CPT codes, check fair prices, and detect overcharges. 100% private, runs in your browser.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
@@ -21,17 +22,17 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
     </noscript>
     <link rel="stylesheet" href="style.css">
-    <link rel="canonical" href="https://medicalbillexplainer.netlify.app/">
+    <link rel="canonical" href="https://eobexplanation.com/">
     <script defer src="script.js"></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Medical Bill Explainer",
-      "url": "https://medicalbillexplainer.netlify.app/",
+      "url": "https://eobexplanation.com/",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://medicalbillexplainer.netlify.app/search?q={search_term_string}",
+        "target": "https://eobexplanation.com/codes.html?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
@@ -66,9 +67,22 @@
             <h2>Search a CPT Code</h2>
             <p>Enter a 5-digit code from your bill (e.g., 99214, 80053)</p>
             <div style="margin-top: 1rem; display: flex; gap: 10px; justify-content: center;">
-                <input type="text" id="cptSearchInput" placeholder="Enter Code (e.g. 99213)" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 70%;">
-                <button onclick="window.location.href='cpt/' + document.getElementById('cptSearchInput').value + '.html'" class="btn btn-primary">Search</button>
+                <input type="text" id="cptSearchInput" placeholder="Enter Code (e.g. 99213)" aria-label="Search CPT code" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 70%;">
+                <button id="cptSearchBtn" class="btn btn-primary">Search</button>
             </div>
+            <script>
+            (function() {
+                var input = document.getElementById('cptSearchInput');
+                var btn = document.getElementById('cptSearchBtn');
+                function doSearch() {
+                    var val = input.value.trim().toUpperCase();
+                    if (!val) { input.placeholder = 'Please enter a code first'; input.focus(); return; }
+                    window.location.href = 'cpt/' + val + '.html';
+                }
+                btn.addEventListener('click', doSearch);
+                input.addEventListener('keydown', function(e) { if (e.key === 'Enter') doSearch(); });
+            })();
+            </script>
             <div style="margin-top: 1.25rem;">
                 <a href="codes.html" style="font-weight: 600; font-size: 0.95rem; color: var(--primary-color);">Or browse all 57 medical billing codes in our directory &rarr;</a>
             </div>
@@ -127,7 +141,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Medical Bill Explainer. All rights reserved.</p>
+            <p>&copy; 2026 Medical Bill Explainer. All rights reserved.</p>
             <div class="footer-links">
                 <a href="privacy-policy.html">Privacy Policy</a>
                 <a href="terms-of-use.html">Terms of Use</a>

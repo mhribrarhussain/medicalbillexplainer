@@ -6,7 +6,7 @@ const outputDir = path.join(__dirname, 'cpt');
 const sitemapPath = path.join(__dirname, 'sitemap.xml');
 const codesFilePath = path.join(__dirname, 'codes.html');
 
-const domain = "https://medicalbillexplainer.netlify.app"; // Target domain
+const domain = "https://eobexplanation.com"; // Target domain
 
 // Ensure output directory exists
 if (!fs.existsSync(outputDir)) {
