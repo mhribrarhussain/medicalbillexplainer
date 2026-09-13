@@ -1,3 +1,6 @@
+# Allow Googlebot to fetch robots.txt on the old domain
+/robots.txt                                 /robots.txt                        200
+
 # Domain Migration Redirect
 https://medicalbillexplainer.netlify.app/*  https://eobexplanation.com/:splat  301!
 
