@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR86PQXG37"></script>
+    <!-- Google tag (gtag.js) with Admin Opt-Out Toggle -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      (function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('block_me') === '1') {
+          localStorage.setItem('block_analytics', 'true');
+          alert('Analytics tracking is now DISABLED on this device.');
+          window.history.replaceState({}, document.title, window.location.pathname);
+        } else if (urlParams.get('block_me') === '0') {
+          localStorage.removeItem('block_analytics');
+          alert('Analytics tracking is now ENABLED on this device.');
+          window.history.replaceState({}, document.title, window.location.pathname);
+        }
+        if (localStorage.getItem('block_analytics') === 'true') {
+          window['ga-disable-G-PR86PQXG37'] = true;
+          return;
+        }
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PR86PQXG37';
+        document.head.appendChild(s);
 
-      gtag('config', 'G-PR86PQXG37');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-PR86PQXG37');
+      })();
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
