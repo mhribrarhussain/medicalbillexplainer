@@ -244,6 +244,14 @@ cptCodes.forEach(cpt => {
     </noscript>
     <link rel="stylesheet" href="../style.css">
     <link rel="canonical" href="${pageUrl}">
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <meta name="theme-color" content="#1d4ed8">
     <script type="application/ld+json">
     ${JSON.stringify(schema, null, 2)}
     </script>
@@ -252,7 +260,10 @@ cptCodes.forEach(cpt => {
 
     <header>
         <div class="nav-container">
-            <a href="../index.html" class="logo">Medical Bill Explainer</a>
+            <a href="../index.html" class="logo">
+                <img src="../favicon.svg" alt="Medical Bill Explainer Logo" class="logo-mark" width="34" height="34">
+                <span class="logo-text">Medical Bill <span class="logo-accent">Explainer</span></span>
+            </a>
             <nav class="nav-links">
                 <a href="../codes.html">Browse Codes</a>
                 <a href="../medical-bill-explainer.html">Explainer Tool</a>
@@ -415,6 +426,14 @@ const codesHtml = `<!DOCTYPE html>
     </noscript>
     <link rel="stylesheet" href="style.css">
     <link rel="canonical" href="${domain}/codes.html">
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1d4ed8">
     <script type="application/ld+json">
     ${JSON.stringify(itemListSchema, null, 2)}
     </script>
@@ -477,7 +496,10 @@ const codesHtml = `<!DOCTYPE html>
 
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo">Medical Bill Explainer</a>
+            <a href="index.html" class="logo">
+                <img src="favicon.svg" alt="Medical Bill Explainer Logo" class="logo-mark" width="34" height="34">
+                <span class="logo-text">Medical Bill <span class="logo-accent">Explainer</span></span>
+            </a>
             <nav class="nav-links">
                 <a href="codes.html" class="active">Browse Codes</a>
                 <a href="medical-bill-explainer.html">Explainer Tool</a>

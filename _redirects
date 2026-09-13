@@ -1,5 +1,7 @@
-# Allow Googlebot to fetch robots.txt on the old domain
+# Allow Googlebot to fetch robots.txt and favicons on the old domain
 /robots.txt                                 /robots.txt                        200
+/favicon.ico                                /favicon.ico                       200
+/favicon.svg                                /favicon.svg                       200
 
 # Domain Migration Redirect
 https://medicalbillexplainer.netlify.app/*  https://eobexplanation.com/:splat  301!
