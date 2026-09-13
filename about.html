@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) with Admin Opt-Out Toggle -->
+    <script>
+      (function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('block_me') === '1') {
+          localStorage.setItem('block_analytics', 'true');
+          alert('Analytics tracking is now DISABLED on this device.');
+          window.history.replaceState({}, document.title, window.location.pathname);
+        } else if (urlParams.get('block_me') === '0') {
+          localStorage.removeItem('block_analytics');
+          alert('Analytics tracking is now ENABLED on this device.');
+          window.history.replaceState({}, document.title, window.location.pathname);
+        }
+        if (localStorage.getItem('block_analytics') === 'true') {
+          window['ga-disable-G-PR86PQXG37'] = true;
+          return;
+        }
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PR86PQXG37';
+        document.head.appendChild(s);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-PR86PQXG37');
+      })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Medical Bill Explainer | Mission, Editorial Standards & Team</title>
+    <meta name="description" content="Learn about Medical Bill Explainer, our mission to bring radical transparency to healthcare billing, our research methodology, and how we decode CPT codes and EOBs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+    </noscript>
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://eobexplanation.com/about.html">
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1d4ed8">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "AboutPage",
+          "@id": "https://eobexplanation.com/about.html#webpage",
+          "url": "https://eobexplanation.com/about.html",
+          "name": "About Medical Bill Explainer",
+          "description": "Our mission, editorial verification guidelines, and healthcare billing transparency research.",
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://eobexplanation.com/#organization",
+            "name": "Medical Bill Explainer",
+            "url": "https://eobexplanation.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://eobexplanation.com/favicon.svg"
+            }
+          },
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Medical Bill Explainer",
+            "url": "https://eobexplanation.com/",
+            "founder": {
+              "@type": "Person",
+              "name": "M. Ibrar Hussain",
+              "jobTitle": "Founder & Healthcare Billing Researcher",
+              "description": "Researcher and technologist specializing in open health data, medical billing transparency, and consumer patient advocacy."
+            },
+            "publishingPrinciples": "https://eobexplanation.com/about.html#editorial-standards"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Medical Bill Explainer?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Medical Bill Explainer is an independent, free consumer education platform built to translate 5-digit medical CPT codes, hospital charges, and Explanation of Benefits (EOB) statements into plain, actionable English."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is my personal health or billing data stored on your servers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Our tools run 100% client-side inside your web browser. Zero patient data, bills, names, or health records are ever sent to our servers, logged, or shared."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Medical Bill Explainer provide medical or legal advice?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. All content on Medical Bill Explainer is provided strictly for educational and informational purposes. It is not a substitute for formal medical, legal, or health insurance advice."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="favicon.svg" alt="Medical Bill Explainer Logo" class="logo-mark" width="34" height="34">
+                <span class="logo-text">Medical Bill <span class="logo-accent">Explainer</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="codes.html">Browse Codes</a>
+                <a href="medical-bill-explainer.html">Explainer Tool</a>
+                <a href="insurance-eob-explained.html">EOB Guide</a>
+                <a href="bill-dispute-guide.html">Dispute Guide</a>
+                <a href="about.html" class="active">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="padding: 4.5rem 1.5rem 3.5rem 1.5rem;">
+        <span class="badge" style="background: rgba(255,255,255,0.18); color: #fff; margin-bottom: 0.75rem;">Independent Patient Advocacy & Transparency</span>
+        <h1>Demystifying American Healthcare Bills</h1>
+        <p>We believe every patient has a fundamental right to understand what they are being charged for, why it was billed, and how to spot costly insurance and hospital errors.</p>
+    </section>
+
+    <main class="container" style="max-width: 920px; padding: 2.5rem 1.5rem 4rem 1.5rem;">
+
+        <!-- Prominent Editorial Notice Card -->
+        <div style="background: #ffffff; border-left: 5px solid #1d4ed8; border-radius: 12px; padding: 1.5rem 1.75rem; margin-bottom: 3rem; box-shadow: var(--shadow-md); border: 1px solid #e2e8f0; border-left-width: 5px;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem;">
+                <span style="background: #eff6ff; color: #1d4ed8; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.25rem 0.6rem; border-radius: 9999px;">Editorial Transparency Notice</span>
+                <span style="color: #64748b; font-size: 0.85rem;">Updated: September 14, 2026</span>
+            </div>
+            <p style="font-size: 1.05rem; line-height: 1.65; color: #0f172a; margin: 0; font-weight: 500;">
+                <strong>Written and fact-checked by M. Ibrar Hussain. This page has not been medically reviewed. Information is educational and should be verified with your insurer, provider, or a qualified professional.</strong>
+            </p>
+        </div>
+
+        <!-- Quick Summary Box (AI Search / Direct Answer Target) -->
+        <section class="card" style="margin-bottom: 3rem; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2rem;">
+            <h2 style="font-size: 1.35rem; margin-bottom: 1rem; color: #0f172a;">Quick Overview: What is Medical Bill Explainer?</h2>
+            <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; color: #334155; font-size: 1rem; line-height: 1.6;">
+                <li><strong>Core Mission:</strong> To bridge the asymmetric knowledge gap between multi-billion-dollar hospital billing conglomerates and ordinary patients facing complex invoices.</li>
+                <li><strong>Free Educational Tools:</strong> We provide an instant, client-side medical bill decoder, step-by-step Explanation of Benefits (EOB) calculators, 3 customizable dispute letters, and a database of 57 common CPT billing codes.</li>
+                <li><strong>Privacy Architecture:</strong> Unlike online SaaS portals that upload sensitive medical records to cloud databases, our analysis is executed 100% in your local browser memory. Zero protected health information (PHI) is ever transmitted to or stored on our servers.</li>
+                <li><strong>Editorial Standards:</strong> All code benchmarks and definitions are aggregated from official public datasets, including the Centers for Medicare & Medicaid Services (CMS), Federal Register hospital pricing mandates, and the American Medical Association (AMA) CPT framework.</li>
+            </ul>
+        </section>
+
+        <!-- Our Origin Story -->
+        <section style="margin-bottom: 3.5rem;">
+            <h2 style="font-size: 1.85rem; color: var(--secondary-color); margin-bottom: 1rem;">Why This Project Exists</h2>
+            <p style="font-size: 1.05rem; line-height: 1.75; color: #334155; margin-bottom: 1.25rem;">
+                In the United States, receiving medical care is frequently followed by a second trauma: the arrival of an itemized hospital bill or a multi-page document labeled <em>"THIS IS NOT A BILL"</em> (your Explanation of Benefits). 
+            </p>
+            <p style="font-size: 1.05rem; line-height: 1.75; color: #334155; margin-bottom: 1.25rem;">
+                Studies conducted by consumer advocacy organizations, including the <strong>Kaiser Family Foundation (KFF)</strong> and independent billing audit firms, estimate that up to <strong>70% to 80% of hospital bills contain billing errors</strong>. These range from simple clerical duplicates and unbundled routine supplies to predatory balance bills and arbitrary chargemaster markups that exceed 400% of actual operating costs.
+            </p>
+            <p style="font-size: 1.05rem; line-height: 1.75; color: #334155;">
+                Patients are routinely expected to write checks for thousands of dollars without knowing what a "CPT 99284" represents, whether a facility fee was lawful under the <strong>No Surprises Act</strong>, or why their insurance company approved an "Allowed Amount" that vastly differs from the doctor's initial bill. <strong>Medical Bill Explainer was created to give everyday families the plain-English decoder ring they need to question, verify, and dispute their medical bills before parting with their hard-earned money.</strong>
+            </p>
+        </section>
+
+        <!-- Meet the Founder & Author -->
+        <section class="card" style="margin-bottom: 3.5rem; border: 1px solid #e2e8f0; padding: 2.25rem;">
+            <h2 style="font-size: 1.6rem; color: var(--secondary-color); margin-bottom: 1.25rem;">About the Author & Founder</h2>
+            <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+                <div style="width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #1d4ed8, #0284c7); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 800; flex-shrink: 0; box-shadow: var(--shadow-sm);">
+                    IH
+                </div>
+                <div style="flex: 1; min-width: 260px;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 0.25rem; color: #0f172a;">M. Ibrar Hussain</h3>
+                    <p style="color: #1d4ed8; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.85rem;">Founder, Lead Researcher & Technologist</p>
+                    <p style="font-size: 1rem; line-height: 1.7; color: #475569; margin-bottom: 1rem;">
+                        Ibrar is a researcher and web technologist passionate about health data democratization, open-access consumer finance tools, and public interest software. Frustrated by the pervasive opacity of modern hospital revenue cycle management and administrative red tape, he engineered Medical Bill Explainer to aggregate fragmented public fee schedules into an intuitive, zero-overhead browser utility.
+                    </p>
+                    <p style="font-size: 1rem; line-height: 1.7; color: #475569;">
+                        He actively monitors federal rulemaking, including CMS Hospital Price Transparency mandates (45 CFR Part 180), annual Medicare Physician Fee Schedule revisions, and Department of Labor enforcement guidance under the No Surprises Act.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Editorial Standards & Methodology -->
+        <section id="editorial-standards" style="margin-bottom: 3.5rem;">
+            <h2 style="font-size: 1.85rem; color: var(--secondary-color); margin-bottom: 1rem;">Our Editorial Standards & Research Methodology</h2>
+            <p style="font-size: 1.05rem; line-height: 1.75; color: #334155; margin-bottom: 1.75rem;">
+                Trust in healthcare financial information requires strict adherence to primary regulatory sources. We do not rely on sponsored commercial blogs, third-party affiliate summaries, or anecdotal message boards. Every educational guide and pricing reference is cross-referenced against authoritative bodies:
+            </p>
+
+            <div class="grid-2" style="gap: 1.5rem; margin-bottom: 2rem;">
+                <div class="card" style="border-top: 4px solid #1d4ed8;">
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #0f172a;">1. Official Regulatory Frameworks</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #475569;">
+                        We base our billing protections on the <strong>No Surprises Act (Public Law 116-260)</strong>, Consumer Financial Protection Bureau (CFPB) medical debt reporting rules, and federal Emergency Medical Treatment and Labor Act (EMTALA) guarantees.
+                    </p>
+                </div>
+
+                <div class="card" style="border-top: 4px solid #10b981;">
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #0f172a;">2. CMS Datasets & NCCI Edits</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #475569;">
+                        We cross-reference code bundling rules against the <strong>National Correct Coding Initiative (NCCI)</strong> Procedure-to-Procedure (PTP) edits and the <strong>Medicare Physician Fee Schedule (MPFS)</strong> relative value units (RVUs).
+                    </p>
+                </div>
+
+                <div class="card" style="border-top: 4px solid #f59e0b;">
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #0f172a;">3. AMA Coding Principles</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #475569;">
+                        CPT® (Current Procedural Terminology) codes are copyright of the <strong>American Medical Association (AMA)</strong>. We provide strictly educational descriptions designed to help consumers recognize medical terminology without substituting formal medical necessity reviews.
+                    </p>
+                </div>
+
+                <div class="card" style="border-top: 4px solid #6366f1;">
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #0f172a;">4. Objective Fair Price Benchmarks</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #475569;">
+                        Our estimated cash price brackets reflect regional commercial fair-market averages synthesized from public hospital machine-readable files, CMS standard charges, and consumer cost datasets.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Correction Policy -->
+            <div style="background: #f1f5f9; border-radius: 8px; padding: 1.25rem 1.5rem; border: 1px solid #cbd5e1;">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: #1e293b;">Correction & Update Policy</h4>
+                <p style="font-size: 0.92rem; line-height: 1.6; color: #475569; margin: 0;">
+                    Healthcare laws and CPT code definitions evolve annually. If you spot a discrepancy, an outdated code description, or a broken statutory citation, please notify us immediately. We review verified editorial submissions and deploy corrections within 48 hours.
+                </p>
+            </div>
+        </section>
+
+        <!-- Our Privacy Promise -->
+        <section class="card" style="margin-bottom: 3.5rem; background: #ffffff; border: 1px solid #e2e8f0; padding: 2.25rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                <span style="font-size: 1.75rem;">🔒</span>
+                <h2 style="font-size: 1.6rem; color: var(--secondary-color); margin: 0;">Privacy by Architecture: Zero Server-Side PHI</h2>
+            </div>
+            <p style="font-size: 1rem; line-height: 1.7; color: #475569; margin-bottom: 1.25rem;">
+                Most internet companies collect, store, and monetize user data. Because medical invoices frequently contain deeply private information—such as diagnostic tests, pathology exams, doctor visits, and personal financial figures—we made a foundational architectural decision:
+            </p>
+            <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;">
+                <p style="font-size: 0.95rem; line-height: 1.6; color: #1e40af; margin: 0; font-weight: 500;">
+                    When you paste your medical bill into our Explainer Tool or use our EOB Discrepancy Calculator, the code executes <strong>purely in your local browser's JavaScript engine</strong>. No bill text, patient identifiers, or financial numbers are ever transmitted over the network or saved to any database.
+                </p>
+            </div>
+            <p style="font-size: 0.95rem; line-height: 1.6; color: #64748b; margin: 0;">
+                For complete details regarding our minimal website analytics and cookie practices, please review our comprehensive <a href="privacy-policy.html" style="font-weight: 600; text-decoration: underline;">Privacy Policy</a>.
+            </p>
+        </section>
+
+        <!-- Independence & Funding -->
+        <section style="margin-bottom: 3.5rem;">
+            <h2 style="font-size: 1.85rem; color: var(--secondary-color); margin-bottom: 1rem;">How We Maintain Independence</h2>
+            <p style="font-size: 1.05rem; line-height: 1.75; color: #334155; margin-bottom: 1rem;">
+                Maintaining unbiased consumer advocacy requires total independence from the healthcare industry:
+            </p>
+            <ul style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; color: #475569; font-size: 1rem; line-height: 1.65; margin-bottom: 1.25rem;">
+                <li>We do <strong>not</strong> accept sponsorship, funding, or advertising revenue from health insurance carriers, hospital networks, or pharmaceutical manufacturers.</li>
+                <li>We do <strong>not</strong> sell patient leads or refer visitors to medical debt collection agencies or private credit companies.</li>
+                <li>Our operations are funded independently by our founder and occasional voluntary donations or clearly marked affiliate tools (such as privacy software or financial organization utilities). See our full <a href="affiliate-disclosure.html" style="font-weight: 600; text-decoration: underline;">Affiliate Disclosure</a>.</li>
+            </ul>
+        </section>
+
+        <!-- Clear Contact Method -->
+        <section class="card" style="margin-bottom: 3.5rem; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border: 1px solid #bfdbfe; padding: 2.5rem; text-align: center;">
+            <h2 style="font-size: 1.75rem; color: #1e3a8a; margin-bottom: 0.75rem;">Get in Touch With Us</h2>
+            <p style="font-size: 1.05rem; line-height: 1.6; color: #1e40af; max-width: 620px; margin: 0 auto 1.5rem auto;">
+                Have a question about an educational guide, spotted an error in a CPT code definition, or want to suggest a new billing code to add to our database?
+            </p>
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: #ffffff; padding: 0.85rem 1.75rem; border-radius: 9999px; box-shadow: var(--shadow-sm); border: 1px solid #93c5fd;">
+                <span style="font-size: 1.2rem;">✉️</span>
+                <a href="mailto:contact@eobexplanation.com" style="font-size: 1.1rem; font-weight: 700; color: #1d4ed8; text-decoration: none;">contact@eobexplanation.com</a>
+            </div>
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 1rem;">
+                We respond to all verified consumer, reader, and media inquiries within 2 business days.
+            </p>
+        </section>
+
+        <!-- Frequently Asked Questions -->
+        <section style="margin-bottom: 2rem;">
+            <h2 style="font-size: 1.85rem; color: var(--secondary-color); margin-bottom: 1.5rem;">Frequently Asked Questions</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 0.5rem;">Can Medical Bill Explainer give me clinical medical advice?</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.65; color: #475569; margin: 0;">
+                        No. Medical Bill Explainer is an educational publication dedicated exclusively to financial and billing transparency. We do not assess clinical treatments, diagnose conditions, or evaluate whether a medical procedure was clinically indicated. Always speak with your licensed healthcare provider regarding medical decisions.
+                    </p>
+                </div>
+
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 0.5rem;">Can your tool dispute my hospital bill on my behalf?</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.65; color: #475569; margin: 0;">
+                        We are not a law firm, billing agency, or power-of-attorney service. We empower you with educational tools, dispute letter templates, and negotiation scripts so that you can directly contact your hospital billing department or insurance claims adjuster with confidence.
+                    </p>
+                </div>
+
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 0.5rem;">How accurate are the CPT code prices shown on the site?</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.65; color: #475569; margin: 0;">
+                        Our price ranges reflect typical fair-market cash costs and regional in-network commercial allowances synthesized from public CMS fee schedules and hospital chargemaster disclosures. Actual healthcare charges vary widely based on your geographic location, facility type (e.g., hospital outpatient department vs. independent physician clinic), and individual insurance contract terms.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Medical Bill Explainer. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+            </div>
+            <div class="disclaimer">
+                <p>Disclaimer: This website provides educational information only and does not provide medical, legal, or insurance advice.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

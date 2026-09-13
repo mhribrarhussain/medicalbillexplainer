@@ -15,6 +15,7 @@ https://medicalbillexplainer.netlify.app/*  https://eobexplanation.com/:splat  3
 /privacy-policy                /privacy-policy.html           200
 /terms-of-use                  /terms-of-use.html             200
 /affiliate-disclosure          /affiliate-disclosure.html     200
+/about                         /about.html                    200
 
 # Legacy & Shortcut Redirects
 /explainer                     /medical-bill-explainer.html   301

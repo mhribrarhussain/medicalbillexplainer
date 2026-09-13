@@ -15,6 +15,7 @@ if (!fs.existsSync(outputDir)) {
 
 let sitemapUrls = [
     `${domain}/`,
+    `${domain}/about.html`,
     `${domain}/codes.html`,
     `${domain}/medical-bill-explainer.html`,
     `${domain}/insurance-eob-explained.html`,
@@ -289,6 +290,7 @@ cptCodes.forEach(cpt => {
                 <a href="../medical-bill-explainer.html">Explainer Tool</a>
                 <a href="../insurance-eob-explained.html">EOB Guide</a>
                 <a href="../bill-dispute-guide.html">Dispute Guide</a>
+                <a href="../about.html">About</a>
             </nav>
         </div>
     </header>
@@ -372,6 +374,7 @@ cptCodes.forEach(cpt => {
         <div class="footer-content">
             <p>&copy; 2026 Medical Bill Explainer. All rights reserved.</p>
             <div class="footer-links">
+                <a href="../about.html">About Us</a>
                 <a href="../privacy-policy.html">Privacy Policy</a>
                 <a href="../terms-of-use.html">Terms of Use</a>
                 <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
@@ -545,6 +548,7 @@ const codesHtml = `<!DOCTYPE html>
                 <a href="medical-bill-explainer.html">Explainer Tool</a>
                 <a href="insurance-eob-explained.html">EOB Guide</a>
                 <a href="bill-dispute-guide.html">Dispute Guide</a>
+                <a href="about.html">About</a>
             </nav>
         </div>
     </header>
@@ -620,6 +624,7 @@ const codesHtml = `<!DOCTYPE html>
         <div class="footer-content">
             <p>&copy; 2026 Medical Bill Explainer. All rights reserved.</p>
             <div class="footer-links">
+                <a href="about.html">About Us</a>
                 <a href="privacy-policy.html">Privacy Policy</a>
                 <a href="terms-of-use.html">Terms of Use</a>
                 <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
