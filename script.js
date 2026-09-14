@@ -64,9 +64,15 @@ Patient Copay: $25.00`
     sampleButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             const sampleType = btn.getAttribute('data-sample');
+            if (window.trackGA4Event) {
+                window.trackGA4Event('sample_bill_click', {
+                    event_category: 'engagement',
+                    sample_type: sampleType
+                });
+            }
             if (sampleBills[sampleType] && billInput) {
                 billInput.value = sampleBills[sampleType];
-                analyzeBill(billInput.value);
+                analyzeBill(billInput.value, 'sample_' + sampleType);
             }
         });
     });
@@ -82,11 +88,11 @@ Patient Copay: $25.00`
                 return;
             }
 
-            analyzeBill(text);
+            analyzeBill(text, 'manual_paste');
         });
     }
 
-    function analyzeBill(text) {
+    function analyzeBill(text, triggerSource = 'manual_paste') {
         // CPT & HCPCS Regex (matches 5 digits, 4 digits + letter, or J-codes)
         const cptRegex = /\b([0-9]{5}|[0-9]{4}[A-Z]|J[0-9]{4})\b/gi;
         const allMatches = text.match(cptRegex) || [];
@@ -235,6 +241,20 @@ Patient Copay: $25.00`
 
         resultsArea.innerHTML = html;
         resultsArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Dispatch GA4 custom event for bill analysis
+        if (window.trackGA4Event) {
+            window.trackGA4Event('analyze_bill', {
+                event_category: 'tool_usage',
+                trigger_source: triggerSource,
+                codes_count: validCodes.length,
+                known_codes_count: knownCount,
+                has_duplicates: duplicates.length > 0,
+                estimated_total_low: totalLow,
+                estimated_total_high: totalHigh,
+                input_character_count: text.length
+            });
+        }
     }
 
     function capitalize(str) {
@@ -242,16 +262,16 @@ Patient Copay: $25.00`
     }
 });
 
-// GA4 Event Tracking
+// GA4 Event Tracking for CTA clicks
 document.addEventListener("DOMContentLoaded", function () {
     const explainBtn = document.getElementById("explain-bill-btn");
 
     if (explainBtn) {
         explainBtn.addEventListener("click", function () {
-            if (typeof gtag === 'function') {
-                gtag('event', 'explain_bill_click', {
-                    event_category: 'engagement',
-                    event_label: 'Explain Medical Bill CTA'
+            if (window.trackGA4Event) {
+                window.trackGA4Event('explain_bill_click', {
+                    event_category: 'conversion',
+                    event_label: 'Explain Medical Bill Hero CTA'
                 });
             }
         });

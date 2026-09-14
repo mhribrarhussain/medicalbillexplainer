@@ -529,6 +529,13 @@ Contact: [Your Phone Number / Email]`;
                 tab.classList.add('active');
                 activeTemplate = tab.getAttribute('data-template');
                 generateLetter();
+
+                if (window.trackGA4Event) {
+                    window.trackGA4Event('select_dispute_template', {
+                        event_category: 'engagement',
+                        template_name: activeTemplate
+                    });
+                }
             });
         });
 
@@ -537,6 +544,14 @@ Contact: [Your Phone Number / Email]`;
         });
 
         copyLetterBtn.addEventListener('click', () => {
+            if (window.trackGA4Event) {
+                window.trackGA4Event('copy_dispute_letter', {
+                    event_category: 'conversion',
+                    template_name: activeTemplate,
+                    disputed_amount: parseFloat(inpDisputedAmount.value) || 0
+                });
+            }
+
             navigator.clipboard.writeText(letterPreview.textContent).then(() => {
                 copyLetterBtn.textContent = 'Copied! ✓';
                 setTimeout(() => {

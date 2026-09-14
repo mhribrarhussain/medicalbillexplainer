@@ -664,6 +664,28 @@
 
                 scriptText.textContent = `"Hi, I am calling to verify that my payment of $${hospitalBill.toFixed(2)} satisfies the full remaining balance on Claim #[Number]."`;
             }
+
+            // Debounced GA4 calculation event
+            triggerCalcTracking(billed, allowed, paid, hospitalBill, responsibility, discrepancy);
+        }
+
+        let calcDebounceTimer = null;
+        function triggerCalcTracking(billed, allowed, paid, hospitalBill, responsibility, discrepancy) {
+            clearTimeout(calcDebounceTimer);
+            calcDebounceTimer = setTimeout(() => {
+                if (billed > 0 && allowed > 0 && window.trackGA4Event) {
+                    window.trackGA4Event('calculate_eob_discrepancy', {
+                        event_category: 'tool_usage',
+                        billed_amount: billed,
+                        allowed_amount: allowed,
+                        insurance_paid: paid,
+                        hospital_bill: hospitalBill,
+                        patient_responsibility: responsibility,
+                        discrepancy_amount: Math.round(discrepancy * 100) / 100,
+                        discrepancy_status: statusTitle.textContent.trim()
+                    });
+                }
+            }, 1200);
         }
 
         [calcBilled, calcAllowed, calcPaid, calcHospitalBill].forEach(input => {
@@ -671,6 +693,14 @@
         });
 
         copyScriptBtn.addEventListener('click', () => {
+            if (window.trackGA4Event) {
+                window.trackGA4Event('copy_eob_script', {
+                    event_category: 'conversion',
+                    discrepancy_status: statusTitle.textContent.trim(),
+                    patient_responsibility: resResponsibility.textContent.trim()
+                });
+            }
+
             if (!navigator.clipboard || !navigator.clipboard.writeText) {
                 copyScriptBtn.textContent = 'Copy unavailable';
                 return;

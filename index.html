@@ -111,6 +111,13 @@
                 function doSearch() {
                     var val = input.value.trim().toUpperCase();
                     if (!val) { input.placeholder = 'Please enter a code first'; input.focus(); return; }
+                    if (window.trackGA4Event) {
+                        window.trackGA4Event('cpt_search', {
+                            event_category: 'search',
+                            search_term: val,
+                            search_location: 'homepage'
+                        });
+                    }
                     window.location.href = 'cpt/' + val + '.html';
                 }
                 btn.addEventListener('click', doSearch);

@@ -108,6 +108,13 @@
     function searchCodeRedirect() {
         const val = document.getElementById('errorSearchInput').value.trim().toUpperCase();
         if (val) {
+            if (window.trackGA4Event) {
+                window.trackGA4Event('cpt_search', {
+                    event_category: 'search',
+                    search_term: val,
+                    search_location: '404_page'
+                });
+            }
             window.location.href = 'cpt/' + val + '.html';
         }
     }

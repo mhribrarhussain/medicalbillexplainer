@@ -1358,7 +1358,23 @@
             noResults.style.display = visibleCount === 0 ? 'block' : 'none';
         }
 
-        searchInput.addEventListener('input', filterDirectory);
+        let dirSearchTimer = null;
+        searchInput.addEventListener('input', () => {
+            filterDirectory();
+            clearTimeout(dirSearchTimer);
+            const q = searchInput.value.trim();
+            if (q.length >= 2) {
+                dirSearchTimer = setTimeout(() => {
+                    if (window.trackGA4Event) {
+                        window.trackGA4Event('cpt_search', {
+                            event_category: 'search',
+                            search_term: q,
+                            search_location: 'directory_page'
+                        });
+                    }
+                }, 1200);
+            }
+        });
 
         filterPills.forEach(pill => {
             pill.addEventListener('click', () => {
@@ -1366,6 +1382,13 @@
                 pill.classList.add('active');
                 activeCat = pill.getAttribute('data-cat');
                 filterDirectory();
+
+                if (window.trackGA4Event) {
+                    window.trackGA4Event('filter_cpt_category', {
+                        event_category: 'engagement',
+                        category_name: activeCat
+                    });
+                }
             });
         });
     });
