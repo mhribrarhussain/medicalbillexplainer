@@ -18,6 +18,7 @@ let sitemapUrls = [
     `${domain}/about.html`,
     `${domain}/codes.html`,
     `${domain}/medical-bill-explainer.html`,
+    `${domain}/how-to-read-an-eob.html`,
     `${domain}/insurance-eob-explained.html`,
     `${domain}/bill-dispute-guide.html`,
     `${domain}/privacy-policy.html`,
