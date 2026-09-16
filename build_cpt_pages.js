@@ -285,11 +285,45 @@ cptCodes.forEach(cpt => {
         "dateModified": new Date().toISOString().split('T')[0]
       },
       {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": `${domain}/`
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "CPT Directory",
+            "item": `${domain}/codes.html`
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": `CPT ${cpt.code}`,
+            "item": pageUrl
+          }
+        ]
+      },
+      {
         "@type": "FAQPage",
         "mainEntity": faqEntities
       }
     ]
   };
+
+  // Helper: Format Meta Description <= 155 chars to prevent truncation
+  let metaDesc = `CPT ${cpt.code}: ${cpt.title}. Costs ($${cpt.price_low}-$${cpt.price_high}), coverage rules, why doctors bill this, and questions to ask.`;
+  if (metaDesc.length > 155) {
+    metaDesc = `CPT ${cpt.code}: ${cpt.title.slice(0, 155 - `CPT ${cpt.code}: . Cash: $${cpt.price_low}-$${cpt.price_high}. Billing guide.`.length)}... Cash: $${cpt.price_low}-$${cpt.price_high}. Billing guide.`;
+  }
+  if (metaDesc.length > 155) {
+    metaDesc = metaDesc.slice(0, 152) + '...';
+  }
+
+  const pageTitle = formatTitle(cpt);
 
   const htmlContent = `<!DOCTYPE html>
 <html lang="en">
@@ -325,8 +359,8 @@ cptCodes.forEach(cpt => {
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${formatTitle(cpt)}</title>
-    <meta name="description" content="CPT Code ${cpt.code} is ${cpt.title}. Learn typical cash costs ($${cpt.price_low}-$${cpt.price_high}), insurance coverage rules, why doctors bill this, and questions to ask.">
+    <title>${pageTitle}</title>
+    <meta name="description" content="${metaDesc}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
@@ -336,6 +370,7 @@ cptCodes.forEach(cpt => {
     </noscript>
     <link rel="stylesheet" href="../style.css">
     <script defer src="../nav.js"></script>
+    <script defer src="../script.js"></script>
     <link rel="canonical" href="${pageUrl}">
     <!-- Favicon & Brand Icons -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -345,6 +380,19 @@ cptCodes.forEach(cpt => {
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
     <meta name="theme-color" content="#1d4ed8">
+
+    <!-- Open Graph & Social Cards -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="${pageTitle}">
+    <meta property="og:description" content="${metaDesc}">
+    <meta property="og:url" content="${pageUrl}">
+    <meta property="og:site_name" content="Medical Bill Explainer">
+    <meta property="og:image" content="${domain}/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${pageTitle}">
+    <meta name="twitter:description" content="${metaDesc}">
+    <meta name="twitter:image" content="${domain}/logo.png">
+
     <script type="application/ld+json">
     ${JSON.stringify(schema, null, 2)}
     </script>
@@ -533,8 +581,8 @@ const codesHtml = `<!DOCTYPE html>
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete CPT Code Directory (2026) - Plain English Medical Billing Guide</title>
-    <meta name="description" content="Browse our complete medical CPT code directory. Find plain English explanations, cash cost ranges ($), and billing advice for all 57 common hospital and office codes.">
+    <title>CPT Code Directory: Plain-English Medical Codes</title>
+    <meta name="description" content="Browse 57 common medical CPT codes. Find plain English explanations, cash cost ranges ($), and billing advice for hospital and office visits.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
@@ -553,6 +601,19 @@ const codesHtml = `<!DOCTYPE html>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#1d4ed8">
+
+    <!-- Open Graph & Social Cards -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CPT Code Directory: Plain-English Medical Codes">
+    <meta property="og:description" content="Browse 57 common medical CPT codes. Find plain English explanations, cash cost ranges ($), and billing advice for hospital and office visits.">
+    <meta property="og:url" content="${domain}/codes.html">
+    <meta property="og:site_name" content="Medical Bill Explainer">
+    <meta property="og:image" content="${domain}/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CPT Code Directory: Plain-English Medical Codes">
+    <meta name="twitter:description" content="Browse 57 common medical CPT codes. Find plain English explanations, cash cost ranges ($), and billing advice for hospital and office visits.">
+    <meta name="twitter:image" content="${domain}/logo.png">
+
     <script type="application/ld+json">
     ${JSON.stringify(itemListSchema, null, 2)}
     </script>
@@ -796,6 +857,16 @@ const codesHtml = `<!DOCTYPE html>
 fs.writeFileSync(codesFilePath, codesHtml);
 console.log('Generated: codes.html (Master CPT Directory)');
 
+// Helper: Determine appropriate priority weighting for sitemap
+function getSitemapPriority(url) {
+  if (url === `${domain}/`) return '1.0';
+  if (url.includes('privacy-policy') || url.includes('terms-of-use') || url.includes('affiliate-disclosure')) return '0.3';
+  if (url.includes('about.html')) return '0.6';
+  if (url.includes('/cpt/')) return '0.7';
+  // Core guides and interactive tools
+  return '0.9';
+}
+
 // Generate Sitemap
 const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -803,7 +874,7 @@ ${sitemapUrls.map(url => `  <url>
     <loc>${url}</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>${url.includes('/cpt/') ? '0.8' : '1.0'}</priority>
+    <priority>${getSitemapPriority(url)}</priority>
   </url>`).join('\n')}
 </urlset>`;
 

@@ -1,0 +1,43 @@
+{
+  "stats": {
+    "totalPages": 69,
+    "errors": 0,
+    "warnings": 0,
+    "externalLinks": 8,
+    "sitemapUrls": 67
+  },
+  "issues": [],
+  "externalLinks": {
+    "https://www.cms.gov/medical-bill-rights": [
+      "about.html",
+      "bill-dispute-guide.html",
+      "insurance-eob-explained.html"
+    ],
+    "https://www.cms.gov/medicare/payment/fee-schedules/physician": [
+      "about.html",
+      "bill-dispute-guide.html",
+      "insurance-eob-explained.html"
+    ],
+    "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-149": [
+      "about.html"
+    ],
+    "https://www.consumerfinance.gov/consumer-tools/medical-debt/": [
+      "about.html",
+      "bill-dispute-guide.html",
+      "insurance-eob-explained.html"
+    ],
+    "https://www.irs.gov/charities-non-profits/financial-assistance-policies-faps": [
+      "about.html",
+      "bill-dispute-guide.html"
+    ],
+    "https://www.ama-assn.org/practice-management/cpt": [
+      "about.html"
+    ],
+    "https://www.medicare.gov/providers-services/claims-appeals-complaints": [
+      "insurance-eob-explained.html"
+    ],
+    "https://www.healthcare.gov/glossary/": [
+      "insurance-eob-explained.html"
+    ]
+  }
+}
