@@ -26,31 +26,95 @@ let sitemapUrls = [
     `${domain}/affiliate-disclosure.html`
 ];
 
-// Helper: Calculate 3-4 related codes to build an internal linking mesh
+// Helper: Calculate 3-4 related codes with balanced cyclic mesh to eliminate single-link pages
 function getRelatedCodes(currentCpt, allCodes) {
-  // If this code has an explicit companion, ensure it is first in the related list
+  const sameCat = allCodes.filter(c => c.category === currentCpt.category);
+  const myIdx = sameCat.findIndex(c => c.code === currentCpt.code);
+  
   let selected = [];
   if (currentCpt.companion_code) {
     const comp = allCodes.find(c => c.code === currentCpt.companion_code);
     if (comp) selected.push(comp);
   }
+  
+  // Pick next items in same category cyclically for balanced incoming internal links
+  for (let step = 1; step < sameCat.length && selected.length < 4; step++) {
+    const candidate = sameCat[(myIdx + step) % sameCat.length];
+    if (candidate.code !== currentCpt.code && !selected.some(c => c.code === candidate.code)) {
+      selected.push(candidate);
+    }
+  }
 
-  // 1. Same category (excluding current code and already selected companion)
-  let sameCategory = allCodes.filter(c => c.code !== currentCpt.code && c.category === currentCpt.category && !selected.some(s => s.code === c.code));
-  selected = selected.concat(sameCategory.slice(0, 4 - selected.length));
-
-  // 2. Fallback to anchor companion codes if category has fewer than 4 items
+  // Fallback to high-traffic cross-category anchors if category has < 4 items
   if (selected.length < 4) {
-    const fallbackCodes = ['99213', '80053', '71046', '36415', '99284'];
-    for (const code of fallbackCodes) {
+    const anchors = ['99213', '80053', '71046', '36415', '99284'];
+    for (const a of anchors) {
       if (selected.length >= 4) break;
-      if (code !== currentCpt.code && !selected.some(c => c.code === code)) {
-        const found = allCodes.find(c => c.code === code);
+      if (a !== currentCpt.code && !selected.some(c => c.code === a)) {
+        const found = allCodes.find(c => c.code === a);
         if (found) selected.push(found);
       }
     }
   }
   return selected;
+}
+
+// Helper: Format SEO Title <= 58 characters to eliminate truncation and Semrush warnings
+function formatTitle(cpt) {
+  const prefix = `CPT ${cpt.code}: `;
+  let short = cpt.title
+    .replace(/\s*\(Complete,\s*3\+\s*Views\)/i, ' Complete')
+    .replace(/\s*\(Complete\)/i, '')
+    .replace(/\s*\(Bilateral\)/i, '')
+    .replace(/\s*\(Blood Draw\)/i, '')
+    .replace(/\s*\(Single View\)/i, '')
+    .replace(/\s*\(Two Views\)/i, '')
+    .replace(/\s*\(3 or 4 Views\)/i, '')
+    .replace(/\s*\(1 or 2 Views\)/i, '')
+    .replace(/\s*\(3 Views\)/i, '')
+    .replace(/\s*\(4 or 5 Views\)/i, '')
+    .replace(/\s*\(24-48 hr\)/i, '')
+    .replace(/\s*\(SubQ\/IM\)/i, '')
+    .replace(/\s*\(Addl\)/i, ' (Additional)')
+    .replace(/Established Patient Office Visit/i, 'Established Patient')
+    .replace(/New Patient Office Visit/i, 'New Patient')
+    .replace(/Emergency Dept Visit/i, 'Emergency Visit')
+    .replace(/Complete Blood Count \(CBC\) with Differential/i, 'CBC with Differential')
+    .replace(/Complete Blood Count \(CBC\) without Differential/i, 'CBC Blood Test')
+    .replace(/Comprehensive Metabolic Panel \(CMP\)/i, 'CMP Blood Panel')
+    .replace(/Basic Metabolic Panel \(BMP\)/i, 'BMP Blood Panel')
+    .replace(/Electrocardiogram \(ECG\/EKG\) Complete/i, 'EKG / ECG Complete')
+    .replace(/Electrocardiogram \(ECG\/EKG\) Tracing Only/i, 'EKG / ECG Tracing')
+    .replace(/Electrocardiogram \(ECG\/EKG\) Report Only/i, 'EKG / ECG Report')
+    .replace(/Screening 3D Breast Tomosynthesis/i, '3D Mammogram Tomosynthesis')
+    .replace(/Screening Mammography \(2D, Bilateral\)/i, 'Screening Mammogram 2D')
+    .replace(/Repair of Superficial Wound \(([^)]+)\)/i, 'Wound Repair ($1)')
+    .replace(/Injection, Ceftriaxone Sodium \(Rocephin\), 250mg/i, 'Rocephin Injection 250mg')
+    .replace(/Injection, Dexamethasone Sodium Phosphate, 1mg/i, 'Dexamethasone Injection 1mg')
+    .replace(/Injection, Ketorolac Tromethamine \(Toradol\), 15mg/i, 'Toradol Injection 15mg')
+    .replace(/Injection, Vitamin B-12 Cyanocobalamin, up to 1000mcg/i, 'Vitamin B12 Injection')
+    .replace(/Each Additional Therapeutic Injection/i, 'Additional Injection')
+    .replace(/Each Additional Injection \(Same Drug\)/i, 'Additional Same Injection')
+    .replace(/Therapeutic Injection/i, 'Therapeutic Injection')
+    .replace(/TSH \(Thyroid Stimulating Hormone\)/i, 'TSH Thyroid Test')
+    .replace(/Urinalysis with Microscopy/i, 'Urinalysis w/ Microscopy')
+    .replace(/Urinalysis without Microscopy/i, 'Urinalysis Test')
+    .replace(/MRI Lumbar Spine \(No Contrast\)/i, 'Lumbar Spine MRI (No Contrast)')
+    .replace(/MRI Lumbar Spine \(With Contrast\)/i, 'Lumbar Spine MRI (Contrast)')
+    .replace(/MRI Lumbar Spine \(With & Without Contrast\)/i, 'Lumbar MRI Spine (Contrast)')
+    .trim();
+
+  let candidate = `${prefix}${short} - Cost & Guide`;
+  if (candidate.length > 58) {
+    candidate = `${prefix}${short} Cost & Guide`;
+  }
+  if (candidate.length > 58) {
+    candidate = `${prefix}${short} - Guide`;
+  }
+  if (candidate.length > 58) {
+    candidate = `${prefix}${short.slice(0, 58 - prefix.length - 1)}…`;
+  }
+  return candidate;
 }
 
 // Export client-side lookup database for the Explainer Tool
@@ -65,12 +129,13 @@ cptCodes.forEach(c => {
     misunderstood: c.misunderstood || false
   };
 });
-fs.writeFileSync(path.join(__dirname, 'cpt_data.js'), `window.CPT_DATABASE = ${JSON.stringify(cptDict, null, 2)};\n`);
+fs.writeFileSync(path.join(__dirname, 'cpt_data.js'), `window.CPT_DATABASE = ${JSON.stringify(cptDict)};\n`);
 console.log('Generated: cpt_data.js (Client-side CPT database)');
 
 // Generate Individual CPT Pages
 cptCodes.forEach(cpt => {
-  const fileName = `${cpt.code}.html`;
+  const codeLower = cpt.code.toLowerCase();
+  const fileName = `${codeLower}.html`;
   const filePath = path.join(outputDir, fileName);
   const pageUrl = `${domain}/cpt/${fileName}`;
   
@@ -92,7 +157,7 @@ cptCodes.forEach(cpt => {
                             <h4 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-dark);">${rel.title}</h4>
                             <p style="font-size: 0.875rem; color: #555; margin-bottom: 1rem; line-height: 1.4;">${rel.description}</p>
                         </div>
-                        <a href="${rel.code}.html" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.5rem 1rem; text-align: center; border: 1px solid var(--primary-color); background: #f0f7ff; color: var(--primary-color);">View CPT ${rel.code} Guide &rarr;</a>
+                        <a href="${rel.code.toLowerCase()}.html" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.5rem 1rem; text-align: center; border: 1px solid var(--primary-color); background: #f0f7ff; color: var(--primary-color);">View CPT ${rel.code} Guide &rarr;</a>
                     </div>`).join('')}
                 </div>
             </section>` : '';
@@ -100,14 +165,15 @@ cptCodes.forEach(cpt => {
   // Companion Callout
   let companionHtml = '';
   if (cpt.companion_code && cpt.companion_name) {
+    const compLower = cpt.companion_code.toLowerCase();
     companionHtml = `
             <section class="section">
                 <div style="background-color: #eef6ff; border-left: 5px solid var(--primary-color); padding: 1.25rem; border-radius: 6px;">
                     <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">🔗 Frequently Billed With CPT ${cpt.companion_code}</h3>
-                    <p style="margin-bottom: 0.75rem;">Patients routinely see <strong>CPT ${cpt.code}</strong> and <strong><a href="${cpt.companion_code}.html" style="font-weight: 700; color: var(--primary-color); text-decoration: underline;">CPT ${cpt.companion_code} (${cpt.companion_name})</a></strong> listed together on the same bill or EOB.</p>
+                    <p style="margin-bottom: 0.75rem;">Patients routinely see <strong>CPT ${cpt.code}</strong> and <strong><a href="${compLower}.html" style="font-weight: 700; color: var(--primary-color); text-decoration: underline;">CPT ${cpt.companion_code} (${cpt.companion_name})</a></strong> listed together on the same bill or EOB.</p>
                     <p style="font-size: 0.95rem; color: #444; line-height: 1.5;">${cpt.code === '77063' ? 'CPT 77063 is an add-on procedure that cannot legally be billed alone. It must be paired with primary screening code CPT 77067.' : 'CPT 77067 is the standard 2D mammogram base code, which is routinely billed alongside CPT 77063 for 3D tomosynthesis.'}</p>
                     <div style="margin-top: 0.75rem;">
-                        <a href="${cpt.companion_code}.html" style="font-weight: 600; font-size: 0.9rem; color: var(--primary-color);">Read our complete guide to CPT ${cpt.companion_code} &rarr;</a>
+                        <a href="${compLower}.html" style="font-weight: 600; font-size: 0.9rem; color: var(--primary-color);">Read our complete guide to CPT ${cpt.companion_code} &rarr;</a>
                     </div>
                 </div>
             </section>`;
@@ -199,16 +265,20 @@ cptCodes.forEach(cpt => {
         "@type": "Article",
         "headline": `CPT Code ${cpt.code}: ${cpt.title} - Meaning, Costs & Billing Guide`,
         "description": `Understand CPT Code ${cpt.code} (${cpt.title}). Plain English explanation, typical price range ($${cpt.price_low}-$${cpt.price_high}), and advice for patients.`,
+        "image": `${domain}/logo.png`,
         "author": {
-          "@type": "Organization",
-          "name": "Medical Bill Explainer"
+          "@type": "Person",
+          "@id": `${domain}/about.html#author`,
+          "name": "M. Ibrar Hussain",
+          "url": `${domain}/about.html#author`,
+          "jobTitle": "Founder, Lead Researcher & Technologist"
         },
         "publisher": {
           "@type": "Organization",
           "name": "Medical Bill Explainer",
           "logo": {
             "@type": "ImageObject",
-            "url": `${domain}/logo.svg`
+            "url": `${domain}/logo.png`
           }
         },
         "datePublished": "2024-01-14",
@@ -255,7 +325,7 @@ cptCodes.forEach(cpt => {
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CPT ${cpt.code}: ${cpt.title} - Cost, Meaning & Bill Guide</title>
+    <title>${formatTitle(cpt)}</title>
     <meta name="description" content="CPT Code ${cpt.code} is ${cpt.title}. Learn typical cash costs ($${cpt.price_low}-$${cpt.price_high}), insurance coverage rules, why doctors bill this, and questions to ask.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -389,6 +459,9 @@ cptCodes.forEach(cpt => {
 `;
   
   fs.writeFileSync(filePath, htmlContent);
+  if (cpt.code !== codeLower) {
+    fs.writeFileSync(path.join(outputDir, `${cpt.code}.html`), htmlContent);
+  }
 });
 console.log(`Generated ${cptCodes.length} individual CPT pages in /cpt/`);
 
@@ -421,7 +494,7 @@ const itemListSchema = {
       "@type": "ListItem",
       "position": index + 1,
       "name": `CPT ${cpt.code} - ${cpt.title}`,
-      "url": `${domain}/cpt/${cpt.code}.html`
+      "url": `${domain}/cpt/${cpt.code.toLowerCase()}.html`
     }))
   }
 };
@@ -605,7 +678,7 @@ const codesHtml = `<!DOCTYPE html>
                             <h3 style="font-size: 1.05rem; margin-bottom: 0.45rem; color: var(--secondary-color);">${cpt.title}</h3>
                             <p style="font-size: 0.88rem; color: #475569; margin-bottom: 1rem; line-height: 1.45;">${cpt.description}</p>
                         </div>
-                        <a href="cpt/${cpt.code}.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.55rem 1rem; text-align: center; border-color: var(--primary-color); color: var(--primary-color); background: #f0f7ff;">View CPT ${cpt.code} Breakdown &rarr;</a>
+                        <a href="cpt/${cpt.code.toLowerCase()}.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.55rem 1rem; text-align: center; border-color: var(--primary-color); color: var(--primary-color); background: #f0f7ff;">View CPT ${cpt.code} Breakdown &rarr;</a>
                     </div>`).join('\n                    ')}
                 </div>
             </section>`;

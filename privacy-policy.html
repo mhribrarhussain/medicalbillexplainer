@@ -33,7 +33,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Medical Bill Explainer</title>
-    <meta name="description" content="Privacy policy for Medical Bill Explainer. Your medical bill data is never transmitted to any server — all analysis runs 100% in your browser.">
+    <meta name="description" content="Privacy policy for Medical Bill Explainer. Your medical bills and health data remain 100% private in your browser. Learn about our strict client-side data protection.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
@@ -43,6 +43,7 @@
     </noscript>
     <link rel="stylesheet" href="style.css">
     <script defer src="nav.js"></script>
+    <link rel="canonical" href="https://eobexplanation.com/privacy-policy.html">
     <!-- Favicon & Brand Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
@@ -62,30 +63,64 @@
             <nav class="nav-links">
                 <a href="codes.html">Browse Codes</a>
                 <a href="medical-bill-explainer.html">Explainer Tool</a>
-                <a href="insurance-eob-explained.html">EOB Guide</a>
+                <a href="how-to-read-an-eob.html">How to Read EOB</a>
+                <a href="insurance-eob-explained.html">EOB Calculator</a>
                 <a href="bill-dispute-guide.html">Dispute Guide</a>
                 <a href="about.html">About</a>
             </nav>
         </div>
     </header>
-    <main class="container">
-        <section class="section">
-            <h1>Privacy Policy</h1>
-            <p>Last Updated: September 13, 2026</p>
-            
-            <h2>1. Information We Collect</h2>
-            <p>We typically do not collect personal identifiable information (PII). Our "Medical Bill Explainer Tool" runs entirely in your browser using JavaScript. The data you paste into the tool is NOT sent to our servers or stored in any database.</p>
-            
-            <h2>2. Medical Disclaimer</h2>
-            <p>This website is for educational purposes only. Do not interpret this information as medical advice or a substitute for professional healthcare consultation.</p>
 
-            <h2>3. Cookies</h2>
-            <p>We may use cookies to improve website performance and analyze traffic via third-party tools like Google Analytics.</p>
+    <main class="container" style="max-width: 860px; margin: 3rem auto; padding: 0 1.5rem;">
+        <div class="card" style="padding: 2.5rem 2rem; line-height: 1.7; color: #334155;">
+            <h1 style="color: var(--secondary-color); font-size: 2.2rem; margin-bottom: 0.5rem;">Privacy Policy</h1>
+            <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 2rem;">Effective Date: September 16, 2026 &bull; Committed to Zero-Knowledge Patient Privacy</p>
 
-            <h2>4. Contact</h2>
-            <p>If you have questions about this privacy policy, please reach out to us via our website contact channels.</p>
-        </section>
+            <section style="margin-bottom: 2rem;">
+                <h2 style="font-size: 1.4rem; color: var(--secondary-color); margin-bottom: 0.75rem;">1. Core Privacy Philosophy: Client-Side Security</h2>
+                <p>Medical Bill Explainer ("we", "us", or "our") operates <a href="https://eobexplanation.com/">eobexplanation.com</a> with a strict privacy-first architecture. Medical bills and insurance Explanation of Benefits (EOB) statements contain sensitive personal information, including diagnostic codes, provider visits, financial amounts, and patient identifiers.</p>
+                <p style="margin-top: 0.75rem;">We designed our platform so that <strong>no medical information is ever uploaded to our servers</strong>. All text processing, CPT code regex matching, fee schedule lookups, and dispute letter generation take place entirely inside your device's web browser using client-side JavaScript. When you close your browser tab, your session data is automatically cleared.</p>
+            </section>
+
+            <section style="margin-bottom: 2rem;">
+                <h2 style="font-size: 1.4rem; color: var(--secondary-color); margin-bottom: 0.75rem;">2. Information We Do NOT Collect</h2>
+                <p>We do not collect, process, sell, rent, or store any of the following:</p>
+                <ul style="margin: 0.75rem 0 0.75rem 1.5rem; line-height: 1.75;">
+                    <li>Personal Identifiable Information (PII) such as full names, home addresses, dates of birth, or Social Security numbers.</li>
+                    <li>Protected Health Information (PHI) or medical records.</li>
+                    <li>Insurance member IDs, group numbers, or claims processing identifiers.</li>
+                    <li>Financial account numbers, credit card data, or bank account routing numbers.</li>
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 2rem;">
+                <h2 style="font-size: 1.4rem; color: var(--secondary-color); margin-bottom: 0.75rem;">3. Web Analytics and How to Opt Out</h2>
+                <p>To monitor site performance, identify broken links, and measure aggregate visitor traffic, we utilize Google Analytics 4 (GA4). GA4 collects pseudonymous technical telemetry such as browser type, operating system, general geographic region (city/country level), and pages visited.</p>
+                <p style="margin-top: 0.75rem;"><strong>How to Opt Out:</strong> We respect your right to complete browsing privacy. You can permanently opt out of all Google Analytics measurement on this website at any time by:</p>
+                <ul style="margin: 0.75rem 0 0.75rem 1.5rem; line-height: 1.75;">
+                    <li>Appending <code>?block_me=1</code> to any page URL on this site, which saves a local block flag in your browser's localStorage.</li>
+                    <li>Using standard browser privacy extensions such as uBlock Origin or Privacy Badger.</li>
+                    <li>Enabling the Global Privacy Control (GPC) or "Do Not Track" signal in your browser settings.</li>
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 2rem;">
+                <h2 style="font-size: 1.4rem; color: var(--secondary-color); margin-bottom: 0.75rem;">4. Cookies and Local Storage</h2>
+                <p>We do not use tracking cookies for behavioral retargeting. We only use browser LocalStorage for essential client-side functions, such as remembering your analytics opt-out preference (<code>block_analytics</code>). No third-party advertising cookies are dropped on your device.</p>
+            </section>
+
+            <section style="margin-bottom: 2rem;">
+                <h2 style="font-size: 1.4rem; color: var(--secondary-color); margin-bottom: 0.75rem;">5. Third-Party Links</h2>
+                <p>Our educational guides include citations and hyperlinks to official government websites (such as CMS.gov, Medicare.gov, and IRS.gov) as well as patient advocacy resources. Once you leave our domain, your browsing is governed by the respective privacy policies of those external domains.</p>
+            </section>
+
+            <section style="margin-bottom: 2rem;">
+                <h2 style="font-size: 1.4rem; color: var(--secondary-color); margin-bottom: 0.75rem;">6. Rights Under State and International Laws (CCPA / GDPR)</h2>
+                <p>Because we do not maintain user accounts, store personal databases, or harvest personal data, we do not have personal files to delete, modify, or export. If you have questions regarding your data privacy rights, you may contact our editorial and development team via our <a href="about.html">About Page</a>.</p>
+            </section>
+        </div>
     </main>
+
     <footer>
         <div class="footer-content">
             <p>&copy; 2026 Medical Bill Explainer. All rights reserved.</p>

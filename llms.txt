@@ -1,0 +1,11 @@
+# Medical Bill Explainer
+
+> Free educational tools and consumer guides to decode US medical bills, itemized hospital statements, Explanation of Benefits (EOB) documents, and CPT procedure codes.
+
+## Core Educational Guides & Tools
+- [How to Read an EOB](https://eobexplanation.com/how-to-read-an-eob): Step-by-step guide to understanding health insurance Explanation of Benefits statements, deductibles, copays, coinsurance, provider adjustments, and patient responsibility.
+- [EOB vs Bill Discrepancy Calculator](https://eobexplanation.com/insurance-eob-explained): Browser-based calculator to compare provider billed charges against insurance allowed amounts, detect overbilling, and generate phone negotiation scripts.
+- [Medical Bill Explainer Tool](https://eobexplanation.com/medical-bill-explainer): In-browser OCR/text scanner that extracts 5-digit CPT procedure codes, flags potential duplicate charges, and benchmarks prices against national averages.
+- [Medical Bill Dispute Guide](https://eobexplanation.com/bill-dispute-guide): Plain-English guide on patient billing rights, the No Surprises Act, IRS Section 501(r) hospital charity care, and ready-to-use dispute letter templates.
+- [CPT Directory](https://eobexplanation.com/codes): Complete directory of 57 common outpatient, emergency room, laboratory, radiology, and procedural CPT/HCPCS codes.
+- [About & Editorial Standards](https://eobexplanation.com/about): Editorial fact-checking guidelines, named authorship, and regulatory primary sources (CMS, CFPB, AMA, eCFR).

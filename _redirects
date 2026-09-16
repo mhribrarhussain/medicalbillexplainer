@@ -1,13 +1,24 @@
 # Allow Googlebot to fetch robots.txt and favicons on the old domain
 /robots.txt                                 /robots.txt                        200
+/llms.txt                                   /llms.txt                          200
 /favicon.ico                                /favicon.ico                       200
 /favicon.svg                                /favicon.svg                       200
 
 # Domain Migration Redirect
 https://medicalbillexplainer.netlify.app/*  https://eobexplanation.com/:splat  301!
 
+# CPT J-Code Upper/Lower 200 Rewrites
+/cpt/J0696.html                            /cpt/j0696.html                    200
+/cpt/J1100.html                            /cpt/j1100.html                    200
+/cpt/J1885.html                            /cpt/j1885.html                    200
+/cpt/J3420.html                            /cpt/j3420.html                    200
+/cpt/J0696                                 /cpt/j0696.html                    200
+/cpt/J1100                                 /cpt/j1100.html                    200
+/cpt/J1885                                 /cpt/j1885.html                    200
+/cpt/J3420                                 /cpt/j3420.html                    200
+
 # Clean URL Rewrites for Netlify
-/cpt/:code                     /cpt/:code.html                200
+/cpt/:code                                 /cpt/:code.html                    200
 /codes                         /codes.html                    200
 /medical-bill-explainer        /medical-bill-explainer.html   200
 /insurance-eob-explained       /insurance-eob-explained.html  200
