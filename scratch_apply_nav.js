@@ -18,9 +18,9 @@ const pages = [
 pages.forEach(({ file, active }) => {
   let content = fs.readFileSync(file, 'utf8');
   
-  // Replace the <header class="site-header"> ... </header> block
-  // (and any existing mobile drawer markup if present)
-  const regex = /<header class="site-header">[\s\S]*?<\/header>/;
+  // Replace the <header class="site-header"> ... </aside> block
+  // to avoid duplicating mobile drawer markup
+  const regex = /<header class="site-header">[\s\S]*?(<\/aside>|<\/header>)/;
   if (!regex.test(content)) {
     console.warn(`Could not find header in ${file}`);
     return;
