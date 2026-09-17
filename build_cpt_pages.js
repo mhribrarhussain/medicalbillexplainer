@@ -21,6 +21,7 @@ let sitemapUrls = [
     `${domain}/medical-bill-explainer.html`,
     `${domain}/how-to-read-an-eob.html`,
     `${domain}/insurance-eob-explained.html`,
+    `${domain}/co-45-denial-code/`,
     `${domain}/bill-dispute-guide.html`,
     `${domain}/privacy-policy.html`,
     `${domain}/terms-of-use.html`,

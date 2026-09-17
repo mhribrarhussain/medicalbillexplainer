@@ -24,6 +24,10 @@ https://medicalbillexplainer.netlify.app/*  https://eobexplanation.com/:splat  3
 /insurance-eob-explained       /insurance-eob-explained.html  200
 /how-to-read-an-eob            /how-to-read-an-eob.html       200
 /how-to-read-an-eob/           /how-to-read-an-eob.html       200
+/co-45-denial-code             /co-45-denial-code.html        200
+/co-45-denial-code/            /co-45-denial-code.html        200
+/co-45                         /co-45-denial-code.html        301
+/carc-45                       /co-45-denial-code.html        301
 /bill-dispute-guide            /bill-dispute-guide.html       200
 /privacy-policy                /privacy-policy.html           200
 /terms-of-use                  /terms-of-use.html             200

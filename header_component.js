@@ -63,6 +63,10 @@ function renderSiteHeader(activePage = '', relPrefix = '') {
                 <span class="drawer-icon">📖</span>
                 <span>How to Read an EOB</span>
             </a>
+            <a href="${relPrefix}co-45-denial-code.html" class="drawer-link${activePage === 'co-45' ? ' active' : ''}">
+                <span class="drawer-icon">📑</span>
+                <span>CO-45 Denial Code</span>
+            </a>
             <a href="${relPrefix}bill-dispute-guide.html" class="drawer-link${activePage === 'dispute' ? ' active' : ''}">
                 <span class="drawer-icon">🛡️</span>
                 <span>Dispute Guide &amp; Letters</span>

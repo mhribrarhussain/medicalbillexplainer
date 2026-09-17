@@ -122,7 +122,8 @@ for (const m of locMatches) sitemapUrls.push(m[1]);
 rootHtml.forEach(f => {
   if (f === '404.html' || f === 'google6eaecc84aa022308.html') return;
   const expectedUrl = `https://eobexplanation.com/${f === 'index.html' ? '' : f}`;
-  const found = sitemapUrls.some(u => u.includes(f) || (f === 'index.html' && u === 'https://eobexplanation.com/'));
+  const baseSlug = f.replace('.html', '');
+  const found = sitemapUrls.some(u => u.includes(f) || u.includes(`/${baseSlug}/`) || (f === 'index.html' && u === 'https://eobexplanation.com/'));
   if (!found) {
     issues.push({ file: 'sitemap.xml', severity: 'ERROR', category: 'Sitemap', detail: `Page ${f} not found in sitemap` });
   }
