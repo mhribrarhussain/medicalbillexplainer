@@ -9,12 +9,12 @@ function renderSiteHeader(activePage = '', relPrefix = '') {
                 <span class="logo-text">Medical Bill <span class="logo-accent">Explainer</span></span>
             </a>
             <nav class="nav-links">
-                <a href="${relPrefix}codes.html"${activePage === 'codes' ? ' class="active"' : ''}>CPT Directory</a>
-                <a href="${relPrefix}medical-bill-explainer.html"${activePage === 'explainer' ? ' class="active"' : ''}>Bill Explainer</a>
                 <a href="${relPrefix}how-to-read-an-eob.html"${activePage === 'eob-guide' ? ' class="active"' : ''}>EOB Guide</a>
-                <a href="${relPrefix}insurance-eob-explained.html"${activePage === 'calculator' ? ' class="active"' : ''}>EOB Calculator</a>
+                <a href="${relPrefix}codes.html"${activePage === 'codes' ? ' class="active"' : ''}>CPT Codes</a>
+                <a href="${relPrefix}denial-codes.html"${activePage === 'denial-codes' ? ' class="active"' : ''}>Denial Codes</a>
+                <a href="${relPrefix}medical-bill-explainer.html"${activePage === 'explainer' ? ' class="active"' : ''}>Bill Explainer</a>
+                <a href="${relPrefix}insurance-eob-explained.html"${activePage === 'calculator' ? ' class="active"' : ''}>Calculator</a>
                 <a href="${relPrefix}bill-dispute-guide.html"${activePage === 'dispute' ? ' class="active"' : ''}>Dispute Guide</a>
-                <a href="${relPrefix}about.html"${activePage === 'about' ? ' class="active"' : ''}>About</a>
             </nav>
             <div style="display: flex; align-items: center; gap: 0.75rem;">
                 <a href="${relPrefix}medical-bill-explainer.html" class="nav-cta-btn">
@@ -44,29 +44,37 @@ function renderSiteHeader(activePage = '', relPrefix = '') {
             <button class="mobile-drawer-close" aria-label="Close Navigation Menu">&times;</button>
         </div>
         <div class="mobile-drawer-body">
-            <div class="mobile-drawer-section-title">Core Interactive Tools</div>
-            <a href="${relPrefix}medical-bill-explainer.html" class="drawer-link${activePage === 'explainer' ? ' active' : ''}">
+            <div class="mobile-drawer-section-title">1. Understand Paperwork</div>
+            <a href="${relPrefix}how-to-read-an-eob.html" class="drawer-link${activePage === 'eob-guide' ? ' active' : ''}">
+                <span class="drawer-icon">📖</span>
+                <span>How to Read an EOB</span>
+            </a>
+
+            <div class="mobile-drawer-section-title">2. Lookup Medical Codes</div>
+            <a href="${relPrefix}codes.html" class="drawer-link${activePage === 'codes' ? ' active' : ''}">
+                <span class="drawer-icon">📋</span>
+                <span>Browse 57 CPT Codes</span>
+            </a>
+            <a href="${relPrefix}denial-codes.html" class="drawer-link${activePage === 'denial-codes' ? ' active' : ''}">
+                <span class="drawer-icon">📑</span>
+                <span>Denial &amp; Adjustment Codes</span>
+            </a>
+            <a href="${relPrefix}co-45-denial-code.html" class="drawer-link${activePage === 'co-45' ? ' active' : ''}">
                 <span class="drawer-icon">🔍</span>
+                <span>CO-45 Denial Code</span>
+            </a>
+
+            <div class="mobile-drawer-section-title">3. Interactive Tools</div>
+            <a href="${relPrefix}medical-bill-explainer.html" class="drawer-link${activePage === 'explainer' ? ' active' : ''}">
+                <span class="drawer-icon">⚡</span>
                 <span>Bill Explainer &amp; Scanner</span>
             </a>
             <a href="${relPrefix}insurance-eob-explained.html" class="drawer-link${activePage === 'calculator' ? ' active' : ''}">
                 <span class="drawer-icon">⚖️</span>
                 <span>EOB vs. Bill Calculator</span>
             </a>
-            <a href="${relPrefix}codes.html" class="drawer-link${activePage === 'codes' ? ' active' : ''}">
-                <span class="drawer-icon">📋</span>
-                <span>Browse 57 CPT Codes</span>
-            </a>
 
-            <div class="mobile-drawer-section-title">Patient Billing Guides</div>
-            <a href="${relPrefix}how-to-read-an-eob.html" class="drawer-link${activePage === 'eob-guide' ? ' active' : ''}">
-                <span class="drawer-icon">📖</span>
-                <span>How to Read an EOB</span>
-            </a>
-            <a href="${relPrefix}co-45-denial-code.html" class="drawer-link${activePage === 'co-45' ? ' active' : ''}">
-                <span class="drawer-icon">📑</span>
-                <span>CO-45 Denial Code</span>
-            </a>
+            <div class="mobile-drawer-section-title">4. Fight Unfair Charges</div>
             <a href="${relPrefix}bill-dispute-guide.html" class="drawer-link${activePage === 'dispute' ? ' active' : ''}">
                 <span class="drawer-icon">🛡️</span>
                 <span>Dispute Guide &amp; Letters</span>

@@ -5,6 +5,8 @@ const pages = [
   { file: 'index.html', active: 'home' },
   { file: 'medical-bill-explainer.html', active: 'explainer' },
   { file: 'how-to-read-an-eob.html', active: 'eob-guide' },
+  { file: 'codes.html', active: 'codes' },
+  { file: 'denial-codes.html', active: 'denial-codes' },
   { file: 'insurance-eob-explained.html', active: 'calculator' },
   { file: 'co-45-denial-code.html', active: 'co-45' },
   { file: 'bill-dispute-guide.html', active: 'dispute' },

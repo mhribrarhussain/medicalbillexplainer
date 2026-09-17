@@ -18,6 +18,7 @@ let sitemapUrls = [
     `${domain}/`,
     `${domain}/about.html`,
     `${domain}/codes.html`,
+    `${domain}/denial-codes.html`,
     `${domain}/medical-bill-explainer.html`,
     `${domain}/how-to-read-an-eob.html`,
     `${domain}/insurance-eob-explained.html`,
