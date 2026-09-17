@@ -369,8 +369,8 @@ cptCodes.forEach(cpt => {
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
     </noscript>
-    <link rel="stylesheet" href="../style.css">
-    <script defer src="../nav.js"></script>
+    <link rel="stylesheet" href="../style.css?v=2">
+    <script defer src="../nav.js?v=2"></script>
     <script defer src="../script.js"></script>
     <link rel="canonical" href="${pageUrl}">
     <!-- Favicon & Brand Icons -->
