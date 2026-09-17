@@ -399,7 +399,7 @@ cptCodes.forEach(cpt => {
 </head>
 <body>
 
-    <header>
+    <header class="site-header">
         <div class="nav-container">
             <a href="../index.html" class="logo">
                 <img src="../favicon.svg" alt="Medical Bill Explainer Logo" class="logo-mark" width="34" height="34">
@@ -674,7 +674,7 @@ const codesHtml = `<!DOCTYPE html>
 </head>
 <body>
 
-    <header>
+    <header class="site-header">
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <img src="favicon.svg" alt="Medical Bill Explainer Logo" class="logo-mark" width="34" height="34">
