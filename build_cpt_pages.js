@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const cptCodes = require('./data/cpt_codes');
+const { renderSiteHeader } = require('./header_component');
 
 const outputDir = path.join(__dirname, 'cpt');
 const sitemapPath = path.join(__dirname, 'sitemap.xml');
@@ -398,22 +399,7 @@ cptCodes.forEach(cpt => {
     </script>
 </head>
 <body>
-
-    <header class="site-header">
-        <div class="nav-container">
-            <a href="../index.html" class="logo">
-                <img src="../favicon.svg" alt="Medical Bill Explainer Logo" class="logo-mark" width="34" height="34">
-                <span class="logo-text">Medical Bill <span class="logo-accent">Explainer</span></span>
-            </a>
-            <nav class="nav-links">
-                <a href="../codes.html">Browse Codes</a>
-                <a href="../medical-bill-explainer.html">Explainer Tool</a>
-                <a href="../insurance-eob-explained.html">EOB Guide</a>
-                <a href="../bill-dispute-guide.html">Dispute Guide</a>
-                <a href="../about.html">About</a>
-            </nav>
-        </div>
-    </header>
+${renderSiteHeader('codes', '../')}
 
     <main class="container">
         <!-- Breadcrumb -->
@@ -673,22 +659,7 @@ const codesHtml = `<!DOCTYPE html>
     </style>
 </head>
 <body>
-
-    <header class="site-header">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="favicon.svg" alt="Medical Bill Explainer Logo" class="logo-mark" width="34" height="34">
-                <span class="logo-text">Medical Bill <span class="logo-accent">Explainer</span></span>
-            </a>
-            <nav class="nav-links">
-                <a href="codes.html" class="active">Browse Codes</a>
-                <a href="medical-bill-explainer.html">Explainer Tool</a>
-                <a href="insurance-eob-explained.html">EOB Guide</a>
-                <a href="bill-dispute-guide.html">Dispute Guide</a>
-                <a href="about.html">About</a>
-            </nav>
-        </div>
-    </header>
+${renderSiteHeader('codes', '')}
 
     <section class="hero" style="padding: 4.5rem 1.5rem 4rem 1.5rem;">
         <span class="badge" style="background: rgba(255,255,255,0.2); color: #fff; margin-bottom: 0.75rem;">57 Common US Billing Codes</span>

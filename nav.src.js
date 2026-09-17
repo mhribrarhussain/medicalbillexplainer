@@ -13,15 +13,58 @@ window.trackGA4Event = function(eventName, params = {}) {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Active Navigation Pill Auto-Scroll
-    const nav = document.querySelector('.nav-links');
-    const activeLink = nav?.querySelector('.active');
+    // 1. Mobile Off-Canvas Slide Drawer Controller
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const drawer = document.querySelector('.mobile-nav-drawer');
+    const backdrop = document.querySelector('.mobile-nav-backdrop');
+    const closeBtn = document.querySelector('.mobile-drawer-close');
 
-    if (nav && activeLink && nav.scrollWidth > nav.clientWidth) {
-        activeLink.scrollIntoView({
-            behavior: 'smooth',
-            block: 'nearest',
-            inline: 'center'
+    function openMobileDrawer() {
+        if (!drawer || !backdrop) return;
+        drawer.classList.add('open');
+        backdrop.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
+        window.trackGA4Event('mobile_nav_open', { event_category: 'navigation' });
+    }
+
+    function closeMobileDrawer() {
+        if (!drawer || !backdrop) return;
+        drawer.classList.remove('open');
+        backdrop.classList.remove('open');
+        document.body.style.overflow = '';
+        if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (menuBtn) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (drawer && drawer.classList.contains('open')) {
+                closeMobileDrawer();
+            } else {
+                openMobileDrawer();
+            }
+        });
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeMobileDrawer);
+    }
+
+    if (backdrop) {
+        backdrop.addEventListener('click', closeMobileDrawer);
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && drawer && drawer.classList.contains('open')) {
+            closeMobileDrawer();
+        }
+    });
+
+    // Close drawer when any drawer link is clicked
+    if (drawer) {
+        drawer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileDrawer);
         });
     }
 
